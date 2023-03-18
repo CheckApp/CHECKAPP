@@ -1,8 +1,6 @@
 # Projeto E-commerce CheckApp
 feito com Django 2.2.4 e Python 3.7.3.
 
-### Conteúdo educacional
-
 ### Este projeto NÃO inclui
 
 - Combinações de variações de produto (tem apenas uma variação)
