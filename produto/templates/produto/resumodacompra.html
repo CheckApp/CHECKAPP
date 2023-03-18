@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %} Carrinho</title>
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --blue:#041562;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        
+        ::-webkit-scrollbar{
+            height: .5rem;
+            width: 1rem;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background-color: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        @media screen and (max-width: 800px){
+            .table tbody tr {
+                display: inline-grid !important;
+            }
+            .totalCarrinho{
+                text-align: right;
+            }
+            .valorTotalCompra{
+                margin: 0px !important;
+            }
+        }
+                
+    </style>
+</head>
+
+
+{% load omfilters %}
+
+
+
+{% block conteudo %}
+
+    {% include 'parciais/_menulateral.html' %}
+
+    <div class="container" >
+
+        <div class="row nav-produtos text-06 mt-3">
+
+            <div class="col titulo-TipoProduto">
+
+                <i class='bx bx-cart iconePedidos icon'></i>
+                <span class="textos textoBranco tituloPage">Carrinho | Resumo</span>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        {% include 'parciais/_carrinho.html' %}
+
+        <div class="col-lg totalCarrinho ">
+            <p class='lead font-weight-bold'>Total</p>
+
+            <div class='table-responsive'>
+                <table class="table table-ResumoCompra">
+                    <tr class="valorTotalCompra">
+                        <td class="font-weight-bold precoTotal">{{ carrinho|cart_totals|formata_preco }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-Amarelo" href="{% url 'pedido:salvarpedido' %}">
+                    Confirmar pedido
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <br><br><br>
+    <!--
+
+    <div class=" container row mb-5">
+        <div class="col-lg">
+
+
+            <br><br>
+
+
+            <div class=" container containerTituloResumo">
+
+                <div class="icone-ItemResumo">
+                    <i class="icone-Usuario"></i>
+                    <p class="lead text-TituloResumoEndereco ">Meus dados</p>
+                </div>
+
+
+
+                <a  class=" iconeEditar" href="{% url 'perfil:criar' %}"></a>
+
+            </div>
+
+            <br>
+
+            <dl class="row">
+                <dt class="col-lg-2">Nome:</dt>
+                <dd class="col-lg-4">{{ usuario.first_name }}</dd>
+                <dt class="col-lg-2">Sobrenome:</dt>
+                <dd class="col-lg-4">{{ usuario.last_name }}</dd>
+
+                <dt class="col-lg-2">Idade:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.idade }}</dd>
+                <dt class="col-lg-2">Nascimento:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.data_nascimento }}</dd>
+
+                <dt class="col-lg-2">CPF:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.cpf }}</dd>
+                <dt class="col-lg-2">E-mail:</dt>
+                <dd class="col-lg-4">{{ usuario.email }}</dd>
+            </dl>
+
+
+            <br><br>
+
+
+            <div class=" container containerTituloResumo">
+
+
+                    <div class="icone-ItemResumo">
+                    <i class="icone-Endereco"></i>
+                    <p class="lead text-TituloResumoEndereco ">Endereço de entrega</p>
+                </div>
+
+
+                <a  class=" iconeEditar" href="{% url 'perfil:criar' %}"></a>
+
+            </div>
+
+            <br>
+
+            <dl class="row">
+                <dt class="col-lg-2">Endereço:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.endereco }}</dd>
+                <dt class="col-lg-2">Número:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.numero }}</dd>
+
+                <dt class="col-lg-2">Complemento:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.complemento }}</dd>
+
+                <dt class="col-lg-2">Bairro:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.bairro }}</dd>
+
+                <dt class="col-lg-2">Cidade:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.cidade }}</dd>
+
+                <dt class="col-lg-2">Estado:</dt>
+                <dd class="col-lg-4">{{ usuario.perfil.estado }}</dd>
+
+            </dl>
+        </div>
+    </div>
+
+    <div class=" container containerTituloResumo">
+        <div class="icone-ItemResumo">
+            <i class="fas icone-Carrinho fa-shopping-cart"></i>
+            <p class="lead text-TituloResumo">Produtos adicionados</p>
+        </div>
+
+        <a  class=" iconeEditar" href="{% url 'produto:carrinho' %}"></a>
+
+    </div>
+
+    <br>
+    <br>
+    -->
+
+
+{% endblock %}

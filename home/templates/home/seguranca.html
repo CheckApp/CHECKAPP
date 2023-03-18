@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}CheckApp - Segurança</title>
+</head>
+<style>
+    :root{
+        --green:#27ae60;
+        --black:#192a56;
+        --blue:#041562;
+        --light-color:#666;
+        --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 8rem;
+    }
+     
+    ::-webkit-scrollbar{
+        height: .5rem;
+        width: 1rem;
+    }
+     
+    ::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+     
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    .img-capaPages{
+        padding: 0px 170px;
+        width: 100%;
+        height: 400px;
+        padding: 0px 170px;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url(/media/imagens/art-segurança.svg);
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position-x: 824px;
+        background-position-y: 119px;
+
+    }
+    .tituloPage{
+        align-self: center;
+        margin-top: 106px;
+        text-align: initial;
+    }
+    .efeito::after{
+        content:'|';
+        color: red;
+        margin-left: 5px;
+        opacity: 10;
+        animation: escrevendo .7s infinite;
+    }
+    .container-conteudoSeguranca{
+        background: white ;
+        height: 100%;
+        padding: 80px 100px;
+    }
+    @media screen and (max-width: 1000px) {
+     
+        .container-conteudoSeguranca{
+            background: white ;
+            height: 100%;
+            padding: 50px 10px !important;
+        }
+    }
+     
+    
+    @media screen and (max-width: 1200px) {
+     
+    }
+    @media screen and (max-width: 1200px) {
+        .img-capaPages {
+            background-position: center !important;
+            background-size: 50% !important;
+            background-position-x: 680px;
+            background-position-y: 119px;
+            height: 100% !important;
+            padding: 0px 10px !important;
+            text-align: center;
+            align-items: center;
+        }
+        .tituloPage {
+            margin-top: 524px;
+        }
+    }
+   
+</style>
+
+
+<body>
+    <div class="containerProjetos">
+
+        {% include 'parciais/_nav.html' %}
+
+        <div class="img-capaPages" alt="...">
+
+            <article class="tituloPage">
+                <h2 class="titulo1 texto-amarelo">Confiança & Segurança</h2>
+                <h3 class="titulo2 textos efeito">Protegemos todos os seus dados!</h3>
+            </article>
+  
+
+        </div>
+        <br><br><br><br>
+
+        <div class="container-conteudoSeguranca">
+
+            <div class="conteudoSeguranca">
+                <br><br><br><br>
+
+                <p class="titulos">Privacidade </p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            Todas as mensagens do WhatsApp, inclusive as mensagens trocadas entre pessoas e empresas, são protegidas pelo mesmo protocolo de criptografia Signal, líder no mercado, que protege as mensagens desde antes de serem enviadas até serem entregues aos destinatários.                            <br>
+                            <br>                            <br>
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <p class="titulos">Segurança </p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            A Plataforma do WhatsApp Business é protegida por uma combinação de pessoas, processos e sistemas de tecnologia de segurança que mantêm os dados dos clientes privados e seguros. A API em nuvem é hospedada pela Meta, que usa a abordagem de defesa em profundidade. Isso significa que usamos diversas proteções em camada para garantir que estamos impedindo e solucionando as vulnerabilidades do nosso código de diversos ângulos. Proteger os dados dos clientes é muito importante para nós, e desenvolvemos a API em nuvem pensando sempre na sua segurança.                            <br>                            <br>
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <p class="titulos">Certificações </p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            A API em nuvem tem a certificação SOC 2 e mantém uma governança rígida, garantindo que os dados sejam tratados da maneira adequada. Também fazemos testes de intrusão regulares e registramos nossos controles usando o questionário "Consensus Assessments Initiative" da Cloud Security Alliance.                            <br>                            <br>
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <p class="titulos">Conformidade </p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            A AUTOAI leva a proteção dos dados e a privacidade das pessoas muito a sério e tem o compromisso de continuar em conformidade com as leis de proteção de dados. A Plataforma do WhatsApp Business permite que nossos clientes continuem cumprindo com suas obrigações de acordo com o Regulamento Geral sobre a Proteção de Dados (RGPD). A Meta cumpre todos os requisitos legais, regulamentares e do setor, bem como as práticas recomendadas do setor.                             <br>                            <br>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% include 'parciais/_footers.html' %}
+    </div>
+    <script>
+        function typeWriter(elemento){
+            const textoArray = elemento.innerHTML.split('');
+            elemento.innerHTML = '';
+            textoArray.forEach((letra, i) => {
+                setTimeout(() => elemento.innerHTML += letra, 100 * i);
+            });
+        }
+        const titulo = document.querySelector('.efeito');
+        typeWriter(titulo);
+
+        typeWriter(document.querySelector('.efeito1'))
+        typeWriter(document.querySelector('.efeito2'))
+        typeWriter(document.querySelector('.efeito3'))
+        typeWriter(document.querySelector('.efeito4'))
+
+    </script>
+</body>
+
+</html>

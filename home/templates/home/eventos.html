@@ -1,0 +1,208 @@
+{% load static%}
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}QLC - Eventos</title>
+</head>
+<style>
+    :root{
+        --green:#27ae60;
+        --black:#192a56;
+        --blue:#041562;
+        --light-color:#666;
+        --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 8rem;
+    }
+     
+    ::-webkit-scrollbar{
+        height: .5rem;
+        width: 1rem;
+    }
+     
+    ::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+     
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    .img-capaPages{
+        padding: 0px 170px;
+        width: 100%;
+        height: 400px;
+        padding: 0px 170px;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url(/media/imagens/art-eventos.svg);
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position-x: 824px;
+        background-position-y: 119px;
+    }
+    .tituloPage{
+        align-self: center;
+        margin-top: 106px;
+        text-align: initial;
+    }
+    .img-card-eventos{
+        max-height: 260px;
+    }
+    .card_eventos{
+        height: 500px !important;
+        width: 100% !important;
+        border: none !important;
+        border-radius: 10px !important;
+        margin: 0px 0px;
+    }
+    .efeito::after{
+        content:'|';
+        color: red;
+        margin-left: 5px;
+        opacity: 10;
+        animation: escrevendo .7s infinite;
+    }
+    .container-cardsEventos{
+        background: white;
+        width: 100%;
+        padding: 30px 100px;
+    }
+    .sectionEventos{
+        background: transparent;
+    }
+    @media screen and (max-width: 1000px) {
+     
+        .container-cardsEventos {
+            background: white;
+            width: 100%;
+            padding: 0px 10px !important;
+        }
+        
+    }
+    
+</style>
+
+
+<body>
+    <div class="containerEventos">
+
+        {% include 'parciais/_nav.html' %}
+
+        <div class="img-capaPages" alt="...">
+            <article class="tituloPage">
+                <h2 class="titulo1 texto-amarelo">Eventos</h2>
+                <h3 class="titulo2 textos efeito">Ouvindo e ajudando os nossos clietes!</h3>
+            </article>
+
+        </div>
+        <br>
+        <br>
+
+
+        <div class="container-cardsEventos">
+            <br><br><br><br>
+
+            <p class="titulos">Conexão que transforma</p>
+            <p>___________________</p>
+            <br>
+            <br>
+            <div class="texto-apresentacao">
+                <p class="textos textoPreto">
+                    Confira os principais eventos, feiras e reuniões que a CheckApp participa e apoia!
+                    <br>
+                    <br>
+                </p>
+
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            {% load omfilters %}
+            <section class="sectionEventos">
+                <div class="row  ">
+                    <div class="col-lg-12">
+                        <div class="card-columns">
+
+                            {% for post in posts %}
+
+                                {% if post.eventos%}
+
+                                    <div class="card card_eventos shadow">
+                                        {% if post.foto_capa %}
+                                            <img class="card-img-top img-card-eventos" src="{{ post.foto_capa.url }}" alt="{{ post.titulo }}">
+                                        {% endif %}
+
+                                        <div class="card-body">
+                                            <h5 class="titulos card-title">{{ post.titulo }}</h5>
+                                            <h5 class="sub-titulos card-title">{{ post.subtitulo }}</h5>
+                                            <br>
+                                            <a href="{% url 'home:detalhe' post.slug %}" class="btn btn-Amarelo">Saiba mais</a>
+                                            
+                                        </div>
+                                    </div>
+                                {%endif%}
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+            <div class="row mt-3">
+                <div class="col">
+                    {% include 'parciais/_pagination.html' %}
+                </div>
+            
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+     
+        </div>
+        
+        
+        
+
+        {% include 'parciais/_footers.html' %}
+    </div>
+    <script>
+        function typeWriter(elemento){
+            const textoArray = elemento.innerHTML.split('');
+            elemento.innerHTML = '';
+            textoArray.forEach((letra, i) => {
+                setTimeout(() => elemento.innerHTML += letra, 100 * i);
+            });
+        }
+        const titulo = document.querySelector('.efeito');
+        typeWriter(titulo);
+
+        typeWriter(document.querySelector('.efeito1'))
+        typeWriter(document.querySelector('.efeito2'))
+        typeWriter(document.querySelector('.efeito3'))
+        typeWriter(document.querySelector('.efeito4'))
+
+    </script>
+
+</body>
+
+</html>

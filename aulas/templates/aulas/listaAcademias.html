@@ -1,0 +1,49 @@
+{% load static %}
+{% load omfilters %}
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}Aulas</title>
+</head>
+<body>
+    
+    {%block pageListaAcademias%}
+    
+    <article class="conteudoEventos">
+        <h1>Lista de professores/aulas</h1>
+        <div class="img-conteudoEventos"></div>
+
+        <div class="cardsEventos">
+            <div class="card-evento ">
+                <div class="row ">
+                    <div class="col-lg-12">
+                        <div class="card-columns">
+
+                            {% load omfilters %}
+                        
+                            {% for aula in aulas %}
+
+                                {% if aulas.mostrar%}
+
+                                    <div class="cardEvento-Flex">
+                                        
+                                
+
+                                        <div class="">
+                                            <div class="card-body">
+                                                <h5 class="sub-titulos textoBranco">{{ aulas.academia }}</h5>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                {%endif%}
+                            {% endfor %}
+                        </div>
+                    </div> 
+                </div>           
+            </div>
+        </div>
+    </article>
+
+
+    {%endblock%}
+
+</body>

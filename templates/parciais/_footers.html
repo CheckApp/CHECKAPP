@@ -1,0 +1,354 @@
+{% load static %}
+<style>
+    .logo-checkapp-footer{
+        width: 462px;
+        height: 200px;
+        display: flex;
+        background-image: url('/media/imagens/logo.png');
+        background-repeat: no-repeat;
+        background-size: 300px;
+        position: absolute;
+    
+    }
+    .textoSlogan{
+        margin-top: 50px !important;
+        padding: 0px 30px !important;
+    }
+    .text-muted{
+        font-size: 20px !important;
+        font-family: dosis !important;
+        
+
+    }
+    .texto-topLinks{
+        margin-inline-end: auto;
+    }
+    .texto-pagamentoSeguranca{
+        margin-inline-end: auto !important;
+    }
+    .pagamento-e-redes{
+        justify-content: space-between !important;
+    }
+    .icone-redes-social{
+        cursor: pointer;
+        font-size: 30px !important;
+        color: white !important;
+    }
+    .icone-redes-social:hover{
+        color: red !important;
+        list-style-image: none;
+    }
+    .img-paypal{
+        padding: 10px 50px;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url('/media/icones/paypal.svg');    
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position-x: 20px;
+        background-position-y: 7px;
+    }
+    .img-visa{
+        padding: 0px 50px;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url('/media/icones/visa.svg');    
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-position-x: center;
+    }
+    .img-mastercard{
+        padding: 0px 50px;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url('/media/icones/mastercard.svg');    
+        background-repeat: no-repeat;
+        background-size: 60%;
+        background-position-x: center;
+    }
+    .img-pix{
+        padding: 0px 50px;
+        width: 100%;
+        height: 100px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url('/media/icones/pix.png');    
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position-x: 20px;
+        background-position-y: 7px;
+    }
+    .list-inline-pagamento{
+        display: flex;
+    }
+    .titulos-footer {
+        padding: 20px 0px;
+    }
+    @media screen and (max-width: 500px) {
+        .imagemChamadaAcelerar{
+            height: 270px !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .list-inline-pagamento{
+            display: block;
+        }
+        .textoSlogan{
+            padding: 0px 30px !important;
+        }
+        
+    
+    }
+    @media screen and (max-width: 1150px) {
+        .container-action-Register{
+            display: block !important;
+            height: 850px !important;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        .imagemChamadaAcelerar{
+            height: 370px !important;
+        }
+        .containerLinks{
+            display: block !important;
+        }  
+        .containerSuporte{
+            margin-top: 30px;
+        }
+        .container-footers{
+            text-align: -webkit-center;
+        }
+        .logo-checkapp-footer {
+            height: 54px;
+            background-size: 239px;
+            position: inherit;
+            margin-left: -25px;
+        }
+        .iconesRedesSociais{
+            margin: 0px 0px !important;
+        }
+    }
+    .row-conteudo-footer{
+        margin-left: -58px !important;
+        margin-right: -58px !important;
+        margin-top: 100px;
+        display: flex;
+        justify-content: space-between !important;
+        
+    }
+    .containerLinksServicos{
+        place-content: end !important;
+        
+    }
+    .titulos-footers{
+        font-size: 25px !important;
+        font-weight: bolder !important;
+        color: #f9df00 !important;
+    }
+    .iconesRedesSociais{
+        transform-origin: center;
+        margin: 0px -60px;
+    }
+    .imagemChamadaAcelerar{
+        background-image: url(/media/imagens/recorte-banner.png);
+        background-repeat: no-repeat;
+        /* background-position-x: 80px; */
+        /* background-position-y: -575px; */
+        background-size: 100%;
+        display: flex;
+        width: 74%;
+        height: 500px;
+    }
+    .container-action-Register{
+        background-color: #f8df00;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: 500px;
+        align-items: center;
+    }
+
+    .container-action-Register-action{
+        display: block;
+        padding: 71px 10px;
+        text-align: -webkit-center;
+    }
+
+    .container-action-Register-action h2{
+        font-family: dosis, sans-serif;
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 40px;
+        color: black;
+    }
+</style>
+<br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<footer class=" container-footers pt-5">
+    <section class="container-action-Register">
+
+
+        <div class="imagemChamadaAcelerar">
+            
+        </div>
+        <div class="container-action-Register-action" >
+            <h2>
+                Pronto para acelerar?
+            </h2>
+            <br>
+            <p class="textos textoPreto">
+                A melhor plataforma do setor para turbinar ainda mais gestão da sua oficina.
+            </p>            
+            <a class="btn btnPreto" href="{% url 'home:sobre' %}">
+                SAIBA MAIS
+            </a>
+
+        </div>
+        
+        
+        
+        
+
+    </section>
+    <br><br><br>
+
+	<div class="container">
+		<!-- Row START -->
+		<div class="row row-conteudo-footer g-4">
+            <br><br><br>
+
+			<!-- Widget 1 START -->
+			<div class="col-lg-3">
+                
+				<!-- logo -->
+				<div class="logomarca ">
+                    <a class="navbar-brand text-logo logo-link " href="{% url 'home:home' %}"> 
+                        <h1 class="text-logo logo-checkapp-footer"></h1>
+                    </a>
+                </div>
+                <br><br><br>
+				<p class="my-3 texto-amarelo textos textoSlogan ">Oficina digital para vender mais, melhor e para mais clientes.</p>
+                <br><br><br>
+			</div>
+			<!-- Widget 1 END -->
+
+			<!-- Widget 2 START -->
+			<div class=" col-lg-8 ms-auto">
+				<div class=" containerLinks containerLinksServicos row g-4">
+					<!-- Link block -->
+					<div class="col-6 col-md-4">
+						<h5 class="text-white mb-2 mb-md-4 textos titulos-footers">INSTITUCIONAL</h5>
+						<ul class="nav flex-column text-primary-hover">
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:home' %}">Home</a>
+                            </li>
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'perfil:acesso' %}">Login</a>
+                            </li>
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'perfil:criar' %}">Cadastre-se</a>
+                            </li>
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:sobre' %}">Sobre</a>
+                            </li>
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'posts:oficinas' %}">Oficinas</a>
+                            </li>
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:eventos' %}">Eventos</a>
+                            </li>
+                        </ul>
+					</div>
+
+					<!-- Link block -->
+					<div class="containerSuporte col-6 col-md-4">
+						<h5 class="text-white mb-2 mb-md-4 titulos-footers textos">SUPORTE</h5>
+						<ul class="nav flex-column text-primary-hover">
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:contato' %}">Contato</a>
+                            </li>
+                            <!--
+
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:como_comprar' %}">Como comprar</a>
+                            </li>
+                            -->
+
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:seguranca' %}">Segurança</a>
+                            </li>
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:documentacao' %}">Integração</a>
+                            </li>
+						</ul>
+					</div>
+									
+				</div>
+			</div>
+			<!-- Widget 2 END -->
+
+		</div><!-- Row END -->
+
+        <br><br><br><br>
+
+		<!-- Payment and card -->
+		<div class="row g-4 pagamento-e-redes mt-0 mt-md-2">
+
+			<!-- Payment card -->
+			<div class="col-sm-7 col-md-6 col-lg-4">
+				<h5 class="titulos-footer text-white mb-2 texto-pagamentoSeguranca titulos-footers textos">PAGAMENTO &amp; SEGURANÇA</h5>
+				<ul class="list-inline list-inline-pagamento mb-0 mt-3">
+                    <!--
+                    <li class="list-inline-item"> 
+                        <a href="#"><i src="#" class="h-5px img-paypal" alt="paypal"></i></a>
+                    </li>
+                    -->
+					
+					<li class="list-inline-item"> <a href="#"><i src="#" class="h-5px img-visa" alt="visa"></i></a></li>
+					<li class="list-inline-item"> <a href="#"><i src="#" class="h-5px img-mastercard" alt="mastercard"></i></a></li>
+					<li class="list-inline-item"> <a href="#"><i src="#" class="h-5px img-pix" alt="pix"></i></a></li>
+				</ul>
+			</div>
+
+			<!-- Social media icon -->
+			<div class="iconesRedesSociais col-sm-5 col-md-6 col-lg-3 text-sm-end">
+				<h5 class="titulos-footer mb-2 text-white titulos-footers textos">SIGA-NOS</h5>
+				<ul class="list-inline mb-0 mt-3">
+					<li class="list-inline-item"> <a class="icone-redes-social bx bxl-facebook" href="https://www.facebook.com/checkapp.net.br"></a> </li>
+					<li class="list-inline-item"> <a class="icone-redes-social bx bxl-instagram" href="https://www.instagram.com/checkapp_oficial"></a> </li>
+					<li class="list-inline-item">  <a class="icone-redes-social bx bxl-youtube" href="https://www.youtube.com/channel/UCsGwccnjN8Ptsv7y7JvZg2w"></a> </li>
+					<li class="list-inline-item"><a class="icone-redes-social bx bxl-whatsapp" href="https://contate.me/checkapp"></a> </li>
+				</ul>	
+			</div>
+		</div>
+
+		<!-- Divider -->
+		<hr class="mt-4 mb-0">
+        <div class="linhaDecoracao"></div>
+
+		<!-- Bottom footer -->
+		<div class="row">
+			<div class="container">
+				<div class="d-lg-flex justify-content-between align-items-center py-3 text-center text-lg-start">
+					<!-- copyright text -->
+					<div class="text-muted text-primary-hover"> Copyrights ©2023 | 27.285.525/0001-77 | Todos os direitos reservados</div>
+					<!-- copyright links-->
+					<div class="nav mt-2 mt-lg-0">
+						<ul class="list-inline text-primary-hover mx-auto mb-0">
+							<li class="list-inline-item me-0"><a class="nav-link py-1 text-muted"  href="{% url 'home:politica_de_privacidade' %}">Política de privacidade</a></li>
+							<li class="list-inline-item me-0"><a class="nav-link py-1 text-muted" href="{% url 'home:termos_de_uso' %}">Termos e condições</a></li>
+							<li class="list-inline-item me-0"><a class="nav-link py-1 text-muted pe-0"  href="{% url 'home:aviso_legal' %}">Aviso legal</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

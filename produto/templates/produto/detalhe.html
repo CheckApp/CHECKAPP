@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" href="media/imagens/icones/ico-checkapp.svg" >
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %} CheckApp | Detalhe produto</title>
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --blue:#041562;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        
+        ::-webkit-scrollbar{
+            height: .5rem;
+            width: 1rem;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background-color: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        @media screen and (min-width: 800px) {
+    
+            .containerProduto{
+                padding: 0px 20px;
+            }
+       
+        }
+        
+
+        
+      
+    </style>
+</head>
+
+{% load omfilters %}
+
+{% block conteudo %}
+
+    {% include 'parciais/_menulateral.html' %}
+
+
+    <div class="container containerProduto" >
+
+
+        <div class="row nav-produtos text-06 mt-3">
+
+            <div class="col titulo-TipoProduto">
+
+                <i class='bx bx-cart iconePedidos icon'></i>
+                <span class="textos textoBranco tituloPage">Carrinho | Produto</span>
+            </div>
+
+            <div class="col btn-voltar">
+                <a class="bx bxs-arrow-from-right" href="{% url 'produto:licencas' %}"></a>
+            </div>
+        </div>
+
+        <br><br><br><br><br><br>
+
+
+
+
+        <div class="container containerProdutoLoja row">
+
+            <div class="col-lg">
+                <div class="row no-gutters">
+                    <div class="col-lg-12">
+                        {% if produto.imagem %}
+                        <img class="img-fluid" style="background-size: 80%" src="{{ produto.imagem.url }}">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg cardProduto">
+                <div class="card-adicionarProduto mt-4 mt-lg-0">
+                    <h1 class="h2 textos">{{ produto.nome }}</h1>
+                    <br>
+                    <p class="lead textos2">{{ produto.descricao_curta }}</p>
+                    <br>
+                    
+                    <p class="lead">
+                        {% if produto.preco_marketing_promocional %}
+                            <div class="preco-produto">
+                                
+                                <div class="preco-antigo">
+                                    <p class="textos2">De</p>
+
+                                    <span id="variation-preco" class=" textos2 precoAntigo lead product-old-price text-muted">
+                                         {{ produto.preco_marketing|formata_preco }}
+                                    </span>
+                                </div>
+                                <div class="preco-novo">
+                                    <p class="textos2">por apenas</p>
+                                    <span id="variation-preco-promocional" class="textos2 precoAtual lead product-price">
+                                        {{ produto.preco_marketing_promocional|formata_preco }}
+                                    </span>
+                                </div>
+                                
+
+                                {% else %}
+                                <span id="variation-preco" class="textos2 precoAtual lead product-price">
+                                    {{ produto.preco_marketing|formata_preco }}
+                                </span>
+                            </div>
+                        {% endif %}
+                    </p>
+                    <br>
+                    <p class="textos2 textoQuantidade"> Selecione a quantidade:</p>
+
+                    <form action="{% url 'produto:adicionaraocarrinho' %}" id="form-add-to-cart">
+                       
+                        <!--Seleção de varioações - Carrinho de compras -->
+                        <div class="form-group adicaoProduto">
+
+                            <select id="select-variacoes" name="vid" class="form-control formSelecao form-control-lg">
+                                {% for variacao in produto.variacao_set.all %}
+
+                                    {% if variacao.preco_promocional %}
+                                        <option data-preco="{{ variacao.preco|formata_preco }}"
+                                            data-preco-promocional="{{ variacao.preco_promocional|formata_preco }}"
+                                            value="{{ variacao.id }}">
+                                            {% if variacao.nome %}
+                                                {{ variacao.nome }}
+                                                {% else %}
+                                                {{ variacao }}
+                                            {% endif %}
+                                        </option>
+
+                                        {% else %}
+
+                                        <option data-preco="{{ variacao.preco|formata_preco }}" value="{{ variacao.id }}">
+                                            {% if variacao.nome %}
+                                                {{ variacao.nome }}
+                                                {% else %}
+                                                {{ variacao }}
+                                            {% endif %}
+                                        </option>
+
+                                    {% endif %}
+
+                                {% endfor %}
+                                
+                            </select>
+                            <button type="submit" class="btn btn-danger btn-lg btn-block">
+                                <i class='bx bx-plus-medical'></i>
+                            </button>
+                        </div>
+
+
+                        <!--Carrinho de compras -->
+
+
+                        {% if request.session.carrinho %}
+                            <div class="container containerQTDcarrinho">
+                                <li class="nav-item">
+
+                                    <a class="nav-link nav-linkCarrinho nav-cart-link active" href="{% url 'produto:carrinho' %}">
+
+                                        <i class='bx bx-cart icon' ></i>
+
+                                    </a>
+                                    <!--Resumo do Carrinho de compras -->
+
+                                    <div class="resumoCarrinho">
+
+                                        <span class="nav-cart-count mr-1">
+                                                <strong>Total  {{ request.session.carrinho|cart_totals }} </strong>
+                                        </span>
+
+                                        <span class="nav-cart-count mr-1">
+                                            <strong>{{ request.session.carrinho|cart_total_qtd }} Produtos adicionados</strong>
+                                        </span>
+                                    </div>
+
+                                </li>
+                            </div>
+                            <br>
+                            <div class="text-left">
+                                <a class="btn btn-Amarelo" href="{% url 'produto:carrinho' %}">Ver carrinho</a>   
+                            </div>
+
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-detalhe-produto">
+            <br>
+            <h1 class="text-center"><strong>DESCRIÇÃO DO PRODUTO</strong></h1>
+
+            <br>
+            <br>
+            <br>
+            
+            <h2 class="text-center">{{ produto.nome }}</h2>
+            <br>
+            <br>
+            
+            <h2 class="text-center">{{ produto.descricao_longa|linebreaks }}
+            
+           
+        </div>
+
+    </div>
+
+{% endblock %}

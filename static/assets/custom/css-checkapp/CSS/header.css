@@ -1,0 +1,379 @@
+*{
+    box-sizing: border-box;
+}
+
+/*MENU PRINCIPAL*/
+
+
+
+#header{
+    position: fixed;
+    z-index: 90;
+    padding-top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transition: all .5s ease-in-out;
+    padding: 30px 100px 0px 100px;
+}
+
+#header .hidden-header{
+    opacity: 0;
+    pointer-events: none;
+    padding-top: 0;
+    margin-top: -300px;
+}
+
+@media only screen and (max-width: 700px){
+    #header {
+        padding: 30px 50px 0px 50px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    #header {
+        padding: 30px 30px 0px 30px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    #header {
+        padding: 30px 20px 0px 20px;
+    }
+}
+
+@media only screen and (max-width: 300px){
+    #header {
+        padding: 30px 10px 0px 10px;
+    }
+}
+
+.header-container{
+    display: flex;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 12px;
+    justify-content: space-between;
+    width: 100%;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,.1);
+    align-items: center;
+}
+.header-container-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header-container-logo .img-fluid{
+    width: 205px;
+    margin-inline-end: auto;
+}
+
+@media only screen and (max-width: 500px){
+    .header-container-logo .img-fluid{
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .header-container-logo .img-fluid{
+        display: none;
+    }
+}
+    
+.brangingLogo img{
+      display: none;
+}
+@media only screen and (max-width: 400px){
+    .brangingLogo img{
+        display: flex;
+        max-width: 50px;
+        height: 50px;
+    }
+}
+
+.header-container-buttons{
+    display: flex;
+}
+
+.header-container-buttons .menu-consultar{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 40px;
+    border: 2px solid var(--theme-primary-color);
+    border-radius: 8px;
+    padding: 0 24px;
+    margin-right: 8px;
+    color: #565655;
+    font-weight: 700!important;
+}
+.hidden{
+    display: none!important;
+}
+
+.header-container-buttons-box{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--theme-primary-color);
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.iconeMenu{
+    background-image: url(/Styles/Icons/menu.svg);
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.iconeLogin{
+    background-image: url(/Styles/Icons/User-ICO.svg);
+    width: 40px;
+    height: 40px;
+}
+
+
+#Container-menu{
+    background-color: rgba(0, 0, 0, .9);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none; /*sedisplay Flex, mostra pop-up*/
+    justify-content: center;
+    align-items: center;
+}
+.conteudo-Menu{
+    background-color: #ffd200;
+    padding: 40px 40px 0 130px;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    right: 0;
+    position: fixed;
+    z-index: 101;
+    transition: all .3s ease-in-out;
+}
+
+#btnFechar-Menu{
+    position: fixed;
+    margin-left: 360px;
+    background-image: url(/Styles/Icons/Close-ICO.svg);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    padding: 40px 40px;
+    cursor: pointer;
+    margin-top: 10px;
+    
+}
+
+.itens-menu{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 30px;
+    color: black;
+    cursor: pointer;
+}
+.itens-menu:hover{
+    color: white;
+}
+
+.menu-site-footer{
+    border: 1px solid black;
+    border-bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    padding: 36px;
+}
+.menu-site-fotter-list{
+    list-style-type: none;
+    padding-left: 0;
+}
+.menu-site-footer-list-Item{
+    list-style-type: none;
+    padding-left: 0;
+}
+.menu-site-footer-list-Item a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 700;
+    line-height: 1.67;
+    text-align: left;
+    margin: 10px auto;
+    background-position: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+    cursor: pointer;
+}
+
+.menu-site-footer-list-Item a:hover{
+    color: white;
+
+}
+
+.menu-site-footer-list-Item a i{
+    font-size: 21px;
+    line-height: 1.43;
+    text-align: center;
+    color: #f9df00;
+    margin-right: 30px;
+}
+
+.icone-Facebook{
+    background-image: url(/Styles/Icons/ico-facebook.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+.icone-Instagram{
+    background-image: url(/Styles/Icons/ico-instagram.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+.icone-YouTube{
+    background-image: url(/Styles/Icons/ico-youtube.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.objectsNavegations{
+    display: flex;
+}
+.informationsBussines{
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+}
+.objectsActions {
+    display: flex;
+    align-items: center;
+}
+.btnContact{
+    margin-left: 30px;
+}
+@media only screen and (max-width: 400px){
+    .btnContact{
+        margin-left: 0px;
+    }
+}
+.btn-informationsBussines{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+}
+.btn-informationsBussines :hover{
+    border: none;
+}
+@media only screen and (max-width: 800px){
+    .btn-informationsBussines{
+        width: 100px;
+    }
+}
+
+.btnRegister{
+    margin-left: 30px;
+}
+@media only screen and (max-width: 1200px){
+    .btnRegister{
+        display: none;
+    }
+}
+.btnLogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 600px){
+    .btnLogin{
+        
+    }
+}
+
+.btn-objectsActions{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 60px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 0px;
+}
+
+
+
+/*CONTAINER*/
+
+@media only screen and (max-width: 700px){
+    .containerApresentation{
+    
+        padding: 50px 50px 0px 50px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 500px){
+    .containerApresentation{
+    
+        padding: 50px 50px 0px 20px;
+        width: 100%;
+    }
+}
+
+.containerApresentation h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 70px;
+    font-weight: 900;
+    color: white;
+}
+
+.containerApresentation h3{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+}

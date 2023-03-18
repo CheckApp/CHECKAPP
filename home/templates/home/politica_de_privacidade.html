@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}CheckApp - Política de Privacidade</title>
+</head>
+<style>
+    :root{
+        --green:#27ae60;
+        --black:#192a56;
+        --blue:#041562;
+        --light-color:#666;
+        --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 8rem;
+    }
+     
+    ::-webkit-scrollbar{
+        height: .5rem;
+        width: 1rem;
+    }
+     
+    ::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+     
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    .img-capaPages{
+        padding: 0px 170px;
+        width: 100%;
+        height: 400px;
+        padding: 0px 170px;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url(/media/imagens/art-politica.svg);
+        background-repeat: no-repeat;
+        background-size: 20%;
+        background-position-x: 824px;
+        background-position-y: 119px;
+
+    }
+    .tituloPage{
+        align-self: center;
+        margin-top: 106px;
+        text-align: initial;
+    }
+    .efeito::after{
+        content:'|';
+        color: red;
+        margin-left: 5px;
+        opacity: 10;
+        animation: escrevendo .7s infinite;
+    }
+    .container-conteudoSeguranca{
+        background: white;
+        height: 100%;
+        padding: 80px 100px;
+    }
+    @media screen and (max-width: 1200px) {
+        .img-capaPages {
+            background-position: center !important;
+            background-size: 50% !important;
+            background-position-x: 680px;
+            background-position-y: 119px;
+            height: 100% !important;
+            padding: 0px 10px !important;
+            text-align: center;
+            align-items: center;
+        }
+        .tituloPage {
+            margin-top: 524px;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+       
+        
+    }
+    @media screen and (max-width: 1000px) {
+     
+        .container-conteudoSeguranca{
+            background: white ;
+            height: 100%;
+            padding: 50px 10px !important;
+        }
+    }
+   
+</style>
+
+
+<body>
+    <div class="containerProjetos">
+
+        {% include 'parciais/_nav.html' %}
+
+        <div class="img-capaPages" alt="...">
+
+            <article class="tituloPage">
+                <h2 class="titulo1 texto-amarelo">Política de Privacidade</h2>
+                <h3 class="titulo2 textos efeito">Faça as escolhas de privacidade certas para você!</h3>
+            </article>
+  
+
+        </div>
+        <br><br><br><br>
+
+        <div class="container-conteudoSeguranca">
+
+            <div class="conteudoSeguranca">
+                <br><br><br><br>
+
+                <p class="titulos">O que é a Política de Privacidade e o que ela aborda? </p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            Nós, da AUTOAI, queremos que você saiba quais informações coletamos e como as usamos e compartilhamos. É por essa razão que recomendamos que você leia nossa Política de Privacidade. Isso facilita o uso dos Produtos da AUTOAI da maneira certa para você.
+                            
+                        </p>
+                        <br>
+                        <p class="textos textoPreto">
+                            Em nossa Política de Privacidade, explicamos como coletamos, usamos, compartilhamos, retemos e transferimos informações. Explicamos também quais são seus direitos. Cada seção da Política apresenta exemplos úteis em uma linguagem simples para que nossas práticas sejam fáceis de entender. Além disso, adicionamos links para recursos em que você pode saber mais sobre tópicos de privacidade do seu interesse.                        </p>
+                        </p>
+                        <br>
+
+                        <p class="textos textoPreto">
+                            Para nós, é importante que você saiba como controlar sua privacidade. Por isso, também mostramos onde gerenciar suas informações nas configurações dos Produtos da AUTOAI que você usa. 
+                        </p>
+                        <br>
+
+                    </div>
+
+                </div>
+                <br><br><br><br>
+
+                <p class="titulos">Quais informações coletamos?</p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            Como usamos suas informações?                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+        {% include 'parciais/_footers.html' %}
+    </div>
+    <script>
+        function typeWriter(elemento){
+            const textoArray = elemento.innerHTML.split('');
+            elemento.innerHTML = '';
+            textoArray.forEach((letra, i) => {
+                setTimeout(() => elemento.innerHTML += letra, 100 * i);
+            });
+        }
+        const titulo = document.querySelector('.efeito');
+        typeWriter(titulo);
+
+        typeWriter(document.querySelector('.efeito1'))
+        typeWriter(document.querySelector('.efeito2'))
+        typeWriter(document.querySelector('.efeito3'))
+        typeWriter(document.querySelector('.efeito4'))
+
+    </script>
+</body>
+
+</html>

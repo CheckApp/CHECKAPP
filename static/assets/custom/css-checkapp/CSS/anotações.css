@@ -1,0 +1,16 @@
+
+
+.classe{
+
+    color: #5a5a5a5e; /*cor label formulários */
+
+    background-color: #ffd200; /*amarelo padrão */
+
+    background-color: yellow; /*amarelo destaque padrão */
+
+    background-color: #050b17; /*fundo escuro padrão */
+
+    background-color: #f5f7f9;/*fundo claro padrão */
+
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2); /*Efeito de bordas claro padrão */
+}

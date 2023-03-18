@@ -1,0 +1,130 @@
+{% load static %}
+<style>
+    .icone-redes-social{
+        cursor: pointer;
+        margin: 0px 10px;
+        font-size: 50px !important;
+    }
+    .icone-redes-social:hover{
+        color: red !important;
+        list-style-image: none;
+    }
+</style>
+
+<footer>
+    <section class="section-footer">
+        <div class="chamadaAcao">
+            <div class="logomarca ">
+                <a class="navbar-brand text-logo logo-link " href="{% url 'home:home' %}"> 
+                    <h1 class="text-logo logo-checkapp"></h1>
+                </a>
+            </div>
+            <br>
+            <br>
+            <div class=" textosChamada">
+                <p class="textos textoBranco">Tecnologia para vender mais, melhor e para mais clientes</p>
+            </div>
+
+        </div>
+
+        <div class="linhaDecoracao"></div>
+
+        <div class="servicos">
+
+            <div class="itemServicos">
+                <p class="textoBranco titulos ">Institucional</p>
+                <ul class="itensListaServicos">
+                    <li>
+                        <a class=" textos ancoraServicos" href="{% url 'home:home' %}">Home</a>
+                    </li>
+                    <li>
+                        <a class=" textos ancoraServicos" href="{% url 'perfil:acesso' %}">Login</a>
+                    </li>
+                    <li>
+                        <a class=" textos ancoraServicos" href="{% url 'perfil:criar' %}">Cadastre-se</a>
+                    </li>
+                    <li>
+                        <a class=" textos ancoraServicos" href="{% url 'home:sobre' %}">Sobre</a>
+                    </li>
+                    <li>
+                        <a class=" textos ancoraServicos" href="{% url 'posts:oficinas' %}">Oficinas</a>
+                    </li>
+                    <li>
+                        <a class=" textos ancoraServicos" href="{% url 'home:eventos' %}">Eventos</a>
+                    </li>
+
+                    
+                    
+                </ul>
+            </div> 
+
+            <div class="outrosServicos">
+
+                <div class="servcosPlataforma">
+
+                    <div class="itemServicos">
+                        <p class="textoBranco titulos ">Ajuda e Suporte</p>
+                        <ul class="itensListaServicos">
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:contato' %}">Contato</a>
+                            </li>
+                            <!--
+
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:como_comprar' %}">Como comprar</a>
+                            </li>
+                            -->
+
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:seguranca' %}">Segurança</a>
+                            </li>
+                            <li>
+                                <a class=" textos ancoraServicos" href="{% url 'home:documentacao' %}">Integração</a>
+                            </li>
+
+                        </ul>
+                    </div> 
+
+                    <div class="itemServicos">
+                        <p class="textoBranco titulos">Legal</p>
+                        <ul class="itensListaServicos">
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="linhaDecoracao"></div>
+                
+                <div class="redes-sociais">
+                    <a class="icone-redes-social bx bxl-facebook" href="https://www.facebook.com/checkapp.net.br"></a>
+                    <a class="icone-redes-social bx bxl-instagram" href="https://www.instagram.com/checkapp_oficial"></a>
+                    <a class="icone-redes-social bx bxl-youtube" href="https://www.youtube.com/channel/UCsGwccnjN8Ptsv7y7JvZg2w"></a>
+                    <a class="icone-redes-social bx bxl-whatsapp" href="https://contate.me/checkapp"></a>
+                </div>
+                <br>
+                <br>
+ 
+            </div>
+
+        </div>
+
+    </section>
+
+</footer>
+
+
+
+
+<footer class="container-fluid">
+    <div class="container text-light">
+        <div class="p-1">
+            <span class="texto-amarelo texto-rodape">© 2022 - AUTOAI/CheckApp - 27.285.525/0001-77 Todos os direitos reservados</span>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'assets/bootstrap/js/jquery-3.2.1.slim.min.js'%}"></script>
+<script src="{% static 'assets/bootstrap/js/popper.min.js'%}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+<script defer src="{% static 'assets/font-awesome/js/all.js'%}"></script>
+<script src="{% static 'assets/custom/js/scripts.js'%}"></script>

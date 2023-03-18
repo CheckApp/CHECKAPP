@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %} CheckApp | Carrinho</title>
+    <link rel="stylesheet" href="fonts/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --blue:#041562;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        
+        ::-webkit-scrollbar{
+            height: .5rem;
+            width: 1rem;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background-color: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        .navCarrinhoVazio{
+            display: flex;
+        }
+        .icone-btb-LojaOnline{
+            margin: 10px;
+        }
+        .usuarioLogado{
+            display: flex;
+            text-align: center;
+        }
+        .nomeUsuario{
+            margin-left: 15px;
+            font-size: 50px;
+        }
+
+
+        #header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+            padding: 2rem 4rem;
+            z-index: 1000;
+        }
+
+        #header .fa-hamburger {
+            font-size: 4rem;
+            z-index: 10000;
+            color: #FFF200;
+            cursor: pointer;
+            display: none;
+        }
+
+        #header .logo img {
+            height: 5rem;
+        }
+
+        #header nav ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -ms-flex-pack: distribute;
+                justify-content: space-around;
+            list-style: none;
+        }
+
+        #header nav ul li {
+            margin-right: 4rem;
+            }
+
+        #header nav ul li a {
+            color: #fff;
+            font-size: 2rem;
+            }
+
+        #header nav ul li a:hover {
+            color: #FFF200;
+            text-decoration: none;
+            }
+
+    
+        .header-active {
+            background: #333;
+            height: 6rem;
+            -webkit-box-shadow: .2rem 0 .5rem #000;
+            box-shadow: .2rem 0 .5rem #000;
+        }
+
+        .header-active nav ul {
+            margin: 0;
+        }
+        .logo{
+            color: wheat;
+            font-size: 100px;
+        }
+        .carrinhoVazio{
+            padding: 0px 0px 0px 30px !important;
+        }
+        @media screen and (max-width: 800px) {
+            .table tbody tr{
+                display: inline-grid !important;
+            }
+            .container-conteudoCarrinho{
+                padding: 0px 20px !important;
+            }
+            .btn-fazerCadastro{
+                
+            }
+        }
+        @media screen and (max-width: 600px) {
+            
+            .container-conteudoCarrinho{
+                padding: 0px 0px !important;
+            }
+            .btn-fazerCadastro{
+                width: 100% !important;
+            }
+        }
+    </style>
+
+</head>
+
+
+
+{% load omfilters %}
+
+
+{% block conteudo %}
+
+    <div class="containerProdutoCarrinho container">
+
+        {% include 'parciais/_menulateral.html' %}
+
+        {% if carrinho %}
+
+
+            <div class="container container-conteudoCarrinho" >
+
+                <div class="row nav-produtos text-06 mt-3">
+
+                    <div class="col titulo-TipoProduto">
+
+                        <i class='bx bx-cart iconePedidos icon'></i>
+                        <span class="textos textoBranco tituloPage">Carrinho </span>
+
+                    </div>
+
+                </div>
+                <br><br><br>
+
+
+
+
+
+                <div class="row container mt-3">
+                    <div class="col">
+
+                        {% include 'parciais/_carrinho.html' %}
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg container totalCarrinho ">
+                    <p class='lead font-weight-bold'>Total da compra</p>
+
+                    <div class='table-responsive'>
+                        <table class="table-Carrinho table-ResumoCompra">
+                            <tr class="tr-Table">
+
+                                <td class="font-weight-bold precoTotal">{{ carrinho|cart_totals|formata_preco }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+
+                <div class="row container mt-3">
+
+                    <div class="col-lg btn-ActionCompra mt-auto">
+
+                        {% if request.user.is_authenticated %}
+
+                            <a class="btn btn-Amarelo" href="{% url 'produto:resumodacompra' %}">
+                                Confirmar compra
+                            </a>
+
+                        {% else %}
+                            <a class="btn btn-lg btn-block btn-danger btn-fazerCadastro" href="{% url 'perfil:acesso' %}">
+                                FAÇA LOGIN PARA FINALIZAR O PEDIDO
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+
+                </div>
+
+                {% else %}
+
+
+                <!-- header section starts -->
+
+                
+
+                <br><br><br><br><br><br><br><br><br>
+
+                <div class="row container carrinhoVazio mt-3">
+                    <div class="col">
+                        <br><br><br>
+                        <i class='bx bx-cart iconePedidos icon'></i>
+                        <span class="textos textoBranco tituloPage">Carrinho </span>
+                        
+                        <br><br><br>
+
+                        <div class="usuarioLogado">
+                            <h3 class="titulo1 texto-amarelo">Olá, </h3>
+                            <h3 class="textos textoBranco nomeUsuario">{{ user }}! </h3>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h5 class="textos textoBranco"> Neste momento, seu carrinho ainda esta vazio</h5>
+                        <br>
+                        <br><br><br>
+
+                        <a class="btn btn-Amarelo" href="{% url 'produto:loja' %}"> 
+                            <i class='bx bx-store-alt icon icone-btb-LojaOnline'></i> Ver loja online 
+                        
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+    {% endif %}
+    <br><br><br>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% load static%}
+<html lang="pt-BR">
+{% load omfilters %}
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}CheckApp - Detalhe Post - Evento</title>
+</head>
+
+<style>
+    .img-capaEvento{
+        width: 100%;
+        height: 45% !important;
+        display: flex;
+        text-align: -webkit-center;  
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: right;
+        object-fit: cover;
+        object-position: center;
+    }
+    .tituloPage{
+        align-self: center;
+        margin-top: 106px;
+        text-align: initial;
+    }
+    body{
+        background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(255 255 255) 0%, rgb(255 255 255) 90% ) !important;
+    }
+    .containerDetalheEvento{
+        height: 1000px;
+        background: white;
+    }
+    .navPost{
+        background-color: white !important;
+    }
+</style>
+
+
+
+
+<body>
+    {% block conteudo %}
+
+
+    <div class="containerDetalheEvento">
+        <nav class="navPost">
+            {% include 'parciais/_nav.html' %}
+        </nav>
+        <div class="" alt="...">
+            {% if post.foto_capa %}
+                <img class="img-capaEvento img-fluid " src="{{ post.foto_capa.url }}" alt="{{ post.titulo }}">
+            {% endif %}
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="container conteudo-post-projeto">
+            <h1 class="titulos card-title"><strong>{{ post.titulo }}</strong></h1>
+            <h2 class="sub-titulos card-title"><strong>{{ post.subtitulo }}</strong></h2>
+            <br>
+            <br>
+            <br>
+
+            <h3 class="sub-titulos card-title">{{ post.descricaocurta }}</h3>
+            <br>
+            <br>
+            <h4 class="sub-titulos card-title">{{ post.descricaolonga }}</h4>
+        </div>
+        <br>
+        <br>
+        <br>
+    </div>
+    {%endblock%}
+    {% include 'parciais/_footers.html' %}
+</body>
+
+

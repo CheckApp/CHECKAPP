@@ -1,0 +1,91 @@
+{% load static %}
+
+<head>    
+    <title>{% block titulo %}{% endblock %}CheckApp | Perfil Usuário</title> 
+
+    {% include 'parciais/_head.html' %}
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --blue:#041562;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        body{
+            background: black !important;
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        
+        ::-webkit-scrollbar{
+            height: .5rem;
+            width: 1rem;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background-color: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background-color: #ffd200;
+            border-radius: 5rem;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #ffd200;
+            border-radius: 5rem;
+        }
+        .container-cadastro-usuario{
+            display: block;
+            width: 100%;
+        }
+       
+        .iconeCadastro{
+            color: white !important;
+            font-size: 50px;
+        }
+        @media screen and (min-width: 800px) {
+            .containerAtualizarCadastro{
+                padding: 0px !important;
+            }
+        }
+    
+    </style>
+
+</head>
+
+
+<body>
+
+   {% include 'parciais/_menulateral.html' %}
+   <section class="container containerAtualizarCadastro">
+
+
+        <div class="container-cadastro-usuario">
+        
+
+            <div class="titulo-TipoProduto">
+                <i class='bx bx-user-pin iconeCadastro icon'></i>
+                <span class="textos textoBranco tituloPage">Perfil</span>
+            </div>
+            <div class="">
+                {% include 'parciais/_atualizarCadastro.html' %}
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </section>
+
+</body>
+
+
+
+
+
+

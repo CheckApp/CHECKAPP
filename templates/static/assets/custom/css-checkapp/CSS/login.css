@@ -1,0 +1,229 @@
+@import 'reset.css';
+
+.login{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+@media only screen and (max-width: 1200px){
+    .login{
+        flex-direction: column;
+    }
+}
+.banner-login{
+    width: 25%;
+    height: 750px;
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #050b17;
+}
+@media only screen and (max-width: 1200px){
+    .banner-login{
+        width: 100%;
+        height: 0%;
+    }
+}
+.login-form{
+    width: 75%;
+    height: 750px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f7f9;
+}
+@media only screen and (max-width: 1200px){
+    .login-form{
+        width: 100%;
+        height: 600px;
+    }
+}
+.painelInterection{
+    display: inline-block;
+}
+.introducaoLogin{
+    padding: 30px;
+}
+.logo{
+    padding: 30px;
+    margin-top: 25px;
+}
+#btn-voltar{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    align-items: flex-end;
+    padding: 30px;
+    margin-top: 40%;
+}
+.introcao-login img{
+    width: 200px;
+}
+#btn-Sair{
+    background-image: url(/icones/sair.svg);
+    width: 15%;
+    height: 70px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.tabLine{
+    background-color: #ffd200;
+    width: 80%;
+    height: 1px;
+}
+.userPasword{
+    margin-top: 15px;
+}
+.labelUser{
+    margin-top: 10px;
+}
+.btnAcessar{
+    margin-top: 25px;
+}
+.formulario-Login{
+    margin-top: 20px;
+}
+.logo-marca{
+    width: 25%;
+    cursor: pointer;
+}
+.login-form-wrapper{
+    width: 580px;
+    height: 475px;
+    border-radius: 8px;
+    padding: 56px;
+    background-color: #fff;
+    box-shadow: 0 16px 30px 0 rgba(0,0,0,.05);
+    -webkit-box-shadow: 17px 14px 19px -4px rgba(184,184,184,1);
+    -moz-box-shadow: 17px 14px 19px -4px rgba(184,184,184,1);
+    box-shadow: 17px 14px 19px -4px rgba(184,184,184,1);
+    margin-top: -90px;
+}
+.login-form-wrapper button{
+    width: 100%;
+    background-color: #f19f3e;
+    border: none;
+    margin-top: 10px;
+}
+.login-form-wrapper button:hover{
+    width: 100%;
+    background-color: #eaa24d;
+    border: none;
+    transform: scale(1.05);
+    transition: .2s;
+}
+.login-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+#senha{
+    margin-top: 10px;
+}
+#cpf{
+    margin-top: 10px;
+}
+.formulario-Login button{
+    margin-top: 25px;
+}
+.login-title p{
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color: black;
+}
+.loginSubTitulo p{
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 15px;
+}
+@media screen and (max-width: 500px){
+
+    .login-form{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 500px){
+
+    .logo-marca-mobile{
+        display: none;
+        width: 10%;
+        position: relative;
+        bottom: 80px;
+    }
+}
+.login-form form button{
+    background-color: #ffd200;
+    color: black;
+    padding: 18px 35px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+}
+.login-form form button:hover{
+    background-color: #FFEB3B;
+}
+.form-group label{
+    font-family: 'Ubuntu', sans-serif;
+    color: #615656;
+}
+
+.login-form-wrapper form .form-group input{
+    padding: 15px 35px;
+    font-family: "Montserrat-Light";
+    font-size: 15px;
+    color: #272728;
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px 10px 16px;
+    border: solid 1px #e1e1e1;
+    background-color: #fcfcfc;
+    border-radius: 3px;
+    transition: linear .2s;
+    display: block;
+}
+.btn-Cadastro {
+    background-color: #ffd200;
+    color: black;
+    padding: 18px 35px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+}
+.btn-Cadastro :hover {
+    background-color: red;
+}
+.btn-Cadastro a{
+    color: black;
+}
+.content-text p{
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    margin: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+}
+.content-text {
+    margin-top: 20px;
+}
+#text-01{
+    font-size: 30px;
+}
+.helpPassword{
+    margin-top: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+    color: blue;
+}

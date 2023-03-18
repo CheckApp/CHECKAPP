@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>INICIO</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--MEDIA QUERIES-->
+    <link rel="stylesheet" href="/Styles/CSS/home.css"><!--LINK ESTILOS-->
+    <link rel="stylesheet" href="/Styles/CSS/header.css"><!--LINK ESTILOS-->
+    <link rel="stylesheet" href="/Styles/CSS/buttons.css"><!--LINK ESTILOS-->
+    <link rel="stylesheet" href=""><!--LINK SCRIPTs-->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet"><!--FONTE DOS TEXTOS-->
+</head>
+
+<body>
+
+    <header id="header" class="hidden-header"><!--CABEÇALHO-->
+        <div class="header-container">
+            <div class="header-container-logo">
+                <img class="img-fluid" src="/Styles/Logos/logo_original.png" alt="Logo Marca">
+                <div class="brangingLogo">
+                    <img src="/Styles/Logos/logoCheckapp-ICO.svg" alt="Logo Marca">
+                </div>
+            </div>
+            <div class="header-container-buttons">
+                <div class="menu-login">
+                    <div class="header-container-buttons-box">
+                        <div class="header-user">
+                            <div class="btnLogin" onclick="redirectLogin()">
+                                <img class="iconeMenu" src="/Styles/Icons/user.svg" alt="Logo Marca">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="backdrop-menu-site">
+                    <div class="header-container-buttons-box">
+                        <div class="header-menu">
+                            <div class="btn-menu" onclick="abrirMenu()">
+                                <img class="iconeMenu" src="/Styles/Icons/menu.svg" alt="Logo Marca">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav><!--SLIDE-->
+        <div class="containerApresentation">
+            <div class="containerApresentation-Infos">
+                <div class="backgroud-mobile">
+                    <img src="/Styles/Logos/ilustra-home-01.svg" alt="backgraund-home">
+                </div>
+                <div>
+                    <h1>Oficina Digital</h1>
+                    <h3>A transformação em serviços automotivos </h3>
+                
+                </div>
+                <div class="interactionsNav">
+                    <div id="btnPadrao" onclick="redirectLogin()">COMECE AGORA</div>
+                    <div id="btnVideo" onclick="execultarVideo()">VEJA O VÍDEO</div>
+                </div>
+            </div>
+            <div class="containerApresentation-background">
+                <div class="image-backgroud">
+                    <img src="/Styles/Logos/ilustra-home-01.svg" alt="backgraund-home">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+        </div>
+    </nav>
+
+    <!--MENU-->
+
+    <div id="Container-menu" class="">
+        <div class="conteudo-Menu">
+            <div id='btnFechar-Menu' onclick="fecharMenu()"></div>
+            <div class="Container-menu-itens">
+                <div class="home itens-menu" onclick="redirectHome ()">Home</div>
+                <div class="sobre itens-menu" onclick="redirectSobre ()">Sobre nós</div>
+                <div class="sobre itens-menu" onclick="redirectRegistro ()">Faça parte</div>
+                <div class="sobre itens-menu" onclick="redirectContato ()">Contato</div>
+            </div>
+            <div class="container-menu-redeSocial">
+                <div class="menu-site-footer">
+                    <ul class="menu-site-fotter-list">
+                        <li class="menu-site-footer-list-Item">
+                            <a href="https://www.facebook.com/checkapp.net.br">
+                                <i class="icone-Facebook"></i>
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="menu-site-footer-list-Item">
+                            <a href="https://www.instagram.com/autoai.com.br/">
+                                <i class="icone-Instagram"></i>
+                                Instagram
+                            </a>
+                        </li>
+                        <li class="menu-site-footer-list-Item">
+                            <a href="https://www.youtube.com/channel/UCsGwccnjN8Ptsv7y7JvZg2w">
+                                <i class="icone-YouTube"></i>
+                                YouTube
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!--POP-UP Video-->
+
+    <div id="Container" class="">
+        <div class="conteudo">
+            <video class="videoAnimation" controls>
+                <source src="/Styles/Video/CheckApp - Tecnologia para vender mais.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div id='btnFechar' onclick="fecharVideo()"></div>
+
+    </div>
+
+
+
+    <script type="text/javascript">// REDIRECIONAMENTO
+
+        function redirectHome (){
+            window.location.href = "../Views/home.html";
+        }
+        function redirectContato (){
+            window.location.href = "../Views/contato.html";
+        }
+        function redirectSobre (){
+            window.location.href = "../Views/sobre.html";
+        }
+        function redirectLogin (){
+            window.location.href = "../Views/login.html";
+        }
+        function redirectRegistro (){
+            window.location.href = "../Views/registro.html";
+        }
+
+        // POP-UP
+
+        function execultarVideo(){
+            document.getElementById('Container').style.display = 'flex'; // adiciona display flex no elemento ID Container (que por padão é none) para mostrar o vídeo.
+        }
+
+        function fecharVideo(){
+            document.getElementById('Container').style.display = 'none'; // fecha display 
+        }
+        
+
+        function abrirMenu(){
+            document.getElementById('Container-menu').style.display = 'flex'; 
+        }
+
+        function fecharMenu(){
+            document.getElementById('Container-menu').style.display = 'none'; 
+        }
+    </script>
+
+</body>
+</html>

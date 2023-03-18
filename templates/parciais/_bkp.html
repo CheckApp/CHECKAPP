@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+{% load static %}
+{% load omfilters %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}QLC</title>
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        .img-capaPages{
+            padding: 0px 170px;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            text-align: -webkit-center;
+            background-image: url(/media/imagens/img.jpg);    
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: right;
+            background-blend-mode: darken;
+            background-color: #041562;
+        }
+        .tituloPage{
+            align-self: center;
+            margin-top: 106px;
+            text-align: initial;
+        }
+        .img-card-eventos{
+            max-height: 208px;
+        }
+        .card_eventos{
+            height: 470px !important;
+            width: 100% !important;
+            border: none !important;
+        }
+
+        
+    </style>
+</head>
+<body>
+    {% include 'parciais/_nav.html' %}
+
+
+    <section class="section-home"> 
+        <!--CAPA-->
+        <nav class="nav-banner">
+            <div class="conteudo">
+                <h1 class="titulo">De capoeira, para capoeira</h1>
+                <h3 class="sub-titulo" >Aprenda, divirta-se e mantenha a história da capoeira viva!</h3>
+                <div class="botoes-conteudo-navbanner">
+                    <a class="btn btn-branco btn-login" href="{% url 'perfil:acesso' %}">Login</a>
+                    <a class="btn btn-transparente-bordaBranca btn-cadastrese" href="{% url 'perfil:criar' %}">Cadastre-se</a>
+                </div>
+            </div>
+        </nav>
+
+        <!--NOSSA HISTÓRIA-->
+        <article class="nossaHistoria">
+            <div class="ilustracao-img-nossaHistoria">
+                <i class="img-nossaHistoria"></i>
+            </div>
+            <div class="introducao-nossaHistoria">
+                <h2 class="titulos">Nossa História</h2>
+                <p class="textos">[...] A capoeira foi desenvolvida pelos escravos do Brasil como forma de resistir aos seus opressores, praticar em segredo a sua arte, transmitir a sua cultura e melhorar o seu moral. Há registros da prática da capoeira nos séculos XVIII e XIX nas cidades de Salvador, Rio de Janeiro, e Recife, porém durante anos a capoeira...</p>
+                <a class="btn btn-transparente-bordaAzul btn-continuarLendo" href="{% url 'home:sobre' %}">Continuar lendo</a>
+            </div>
+        </article>
+
+        <!--PROJETOS SOCIAIS-->
+        <article class="projetosSociais">
+            <div class="navProjetos container">
+                <h2 class="titulos">Projetos Sociais</h2>
+                <a href="{% url 'home:projetos' %}" class="btn btn-azul">Ver todos projetos</a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="container">
+                {% load omfilters %}
+                <div class="row ">
+                    <div class="col-lg-12">
+                        <div class="card-columns">
+                            {% for post in posts %}
+                                {% if post.projetos_sociais%}
+                                    <div class="card card_eventos">
+                                        {% if post.foto_capa %}
+                                            <img class="card-img-top img-card-eventos" src="{{ post.foto_capa.url }}" alt="{{ post.titulo }}">
+                                        {% endif %}
+                                        <div class="card-body">
+                                            <h5 class="titulos card-title">{{ post.titulo }}</h5>
+                                            <h5 class="sub-titulos card-title">{{ post.subtitulo }}</h5>
+                                            <br>
+                                            <a href="{% url 'home:detalhe' post.slug %}" class="btn btn-transparente-bordaAzul">Saiba mais</a>
+                                        </div>
+                                    </div>
+                                {%endif%}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <br>
+            <br>
+            <br>
+        </article>
+        <br>
+        <br>
+        <br>
+        <!--EVENTOS-->
+        <article class="eventos">
+            <div class="navEventos">
+                <h2 class="titulos">Eventos</h2>
+                <a class="btn btn-transparente-bordaAzul" href="{% url 'home:eventos' %}">Ver todos eventos</a>
+            </div>
+        </article>
+        <article class="conteudoEventos">
+            <div class="img-conteudoEventos"></div>
+            <div class="cardsEventos">
+                <div class="card-evento ">
+                    <div class="row ">
+                        <div class="col-lg-12">
+                            <div class="card-columns">
+                                {% load omfilters %}
+                                {% for post in posts %}
+                                    {% if post.eventos%}
+                                        <a class="cardEvento-Flex" href="{% url 'home:detalhe' post.slug %}">
+                                            {% if post.foto_capa %}
+                                                <div class="img-post-evento">
+                                                    <img src="{{ post.foto_capa.url }}" class="img-fluid rounded float-start" alt="{{ post.titulo }}">
+                                                </div>
+                                            {%endif%}
+                                            <div class="">
+                                                <div class="card-body">
+                                                    <strong><h5 class="sub-titulos text-01 titulo-post">{{ post.titulo }}</h5></strong>
+                                                    <p class="sub-titulos data-post data-card-evento">{{ post.data_post }}</p>
+                                                </div> 
+                                            </div>
+                                        </a>
+                                    {%endif%}
+                                {% endfor %}
+                            </div>
+                        </div> 
+                    </div>           
+                </div>
+            </div>
+        </article>
+        <article class="aulas">
+            <div class="nav-aulas">
+                <h2 class="titulos">Aulas</h2>
+            </div>
+            <div class="cardsAulas">
+                <a class="cardAula" href="{% url 'home:aulas'%}">
+                    <img class="icone-aulas" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPNJREFUSEvtldENwjAQQ90JgAmACYANYBOYDDaBEWADmAA2ALlKpOi4pE6lSHzQv/ZyflbiSzs0frrG+qgBTAGcg6EdgJdiTgVE8XUQvQKQIAogFb8FwAqABBkCWPFtAFwASJASwBOP+86aBMkBSuLxbCWIB1DEZYgF1IhLkBRgozhTsw6AvU8vwimAsWMy4jOUMDtn7+QDtTZ8bwXgvPRD6bmMTmKN2T8CWBjLdwCHEFeWbF+/XAFQaJ65d1hbhtpogNvoOP4Dvs7LbsnvbBFvzInyt3LWPGycvZgy96dCNHNsiu+TucjOwUjzflvtfVMN/wCUvlMZx+RBFQAAAABJRU5ErkJggg=="/>
+                    <h2 class="sub-titulo">Presenciais</h2>
+                </a>
+                <a class="cardAula" href="{% url 'home:aulas'%}">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYhJREFUSEvdlOExBEEQhb+LABEgAkSACBABIkAEiAARcBkQASJABkSACKi31e+qd2rX7vzYP6bq6qp2et7r/rpnZky8ZhPr8z8NjoDX+NUSvACugS8fLBFtAi8RsJ4DRzhJ/By4Bw76DJ6AbeAGOB0hmkPWouolYBeQVqvJzv4bULDWCXA5YJSxuIoHYL80EDsJOvs74DAMdFBLh5ShBMTZgj6zDHxG7Ipicg+Mx+VJQGJbUbrY7sXhOaBhyD2ToFZLp89A4mr2R8L1k1Bp34LvwGpKZJSBxtSlOgkjk08eAhs3SP6qwAiOAYnJZAM4i9k2DhkYmybtCngLXNprVZQRieltZKA+qKFq4k5kpv/HwOQ+qalCIiP9O2aBNhsoWO6tOU7cuwzKCTZ/jXYzeeVN9tjJSDc5L+/pm7HlfRPwPWqei67XVOx1J9SHPoNFhimgxNVs1TzXvog612VQ4qo2MF8dfI6GdormjzUVTG7g+VaC6pPuwuCqqSA/FaP7V2MwmG1XwOQGv6Y7axlVk4JRAAAAAElFTkSuQmCC"/>
+                    <h2 class="sub-titulo">A distância</h2>
+                </a>
+            </div>
+        </article>
+    </section>
+    <section class="decoration"></section>
+
+    <!--
+
+    <main class="container mt-4 mb-4">
+        {% include 'parciais/_messages.html' %}
+        {% block conteudo %}{% endblock %}
+    </main>
+    -->
+
+    {% include 'parciais/_footer.html' %}
+
+
+
+</body>
+
+</html>

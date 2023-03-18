@@ -1,0 +1,775 @@
+@import 'reset.css';
+
+.flexHeader{
+    display: block;
+    justify-content: space-between;
+    
+    height: 100%;
+}
+
+.flexNav{
+    display: flex;
+}
+.flexNavHeader{
+    background-color: #050b17;
+}
+.sair{
+    color: yellow;
+    width: 100%;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    margin-top: 550px;
+    cursor: pointer;
+    background-image: url('/Styles/Icons/logout.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+section{
+    width: calc(100% - 70px);
+    height: 700px;
+    background-color: #f5f7f9;
+}
+
+.menuHeader .logo {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    height: 60px;
+    border: 1px solid rgba(0, 0, 0, .0625);
+    border-right: 0px;
+}
+
+
+.flexHeader header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    background-color: #343a40;
+    padding: 10px 30px;
+
+}
+
+#headerClientes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0px 40px;
+    margin: 30px 0px 0px 0px;
+}
+@media only screen and (max-width: 600px){
+    #headerClientes{
+        display: block;
+    }
+}
+
+#logoMarca{
+    width: 30px;
+}
+
+.menuHeader{
+}
+
+.menuHeader ul{
+    list-style: none;
+}
+
+.menuHeader ul li:hover{
+    background-color: #5a5a5a5e;
+}
+
+.menuHeader ul li{
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Sair-ICONE{
+    background-image: url('/Styles/Icons/Close-ICO.svg');
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.clientes-ICONE{
+    background-image: url(/Styles/Icons/Cliente-ICO.svg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.chamados-ICONE{
+    background-image: url('/Styles/Icons/Chamado-ICO.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.usuarios-ICONE{
+    background-image: url('/Styles/Icons/User-ICO.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.adicionarNovoCliente{
+    background-image: url('/Styles/Icons/Mais-ICO.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.filtroStatusCliente-ICONE{
+    background-image: url('/Styles/Icons/Filtro-ICO.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.titleSection{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    color:black;
+    text-transform: uppercase;
+}
+.interactionsClientes{
+    display: flex;
+}
+@media only screen and (max-width: 450px){
+    .interactionsClientes{
+        display: block;
+    }
+}
+
+.interactionsClientes i{
+    margin: 0px 10px;
+}
+
+.pesquisaClientes{
+    padding: 15px 35px;
+    font-family: "Montserrat-Light";
+    font-size: 15px;
+    color: #272728;
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px 10px 16px;
+    border: solid 1px #e1e1e1;
+    background-color: #fcfcfc;
+    border-radius: 3px;
+    transition: linear .2s;
+    display: block;
+}
+@media only screen and (max-width: 450px){
+    .pesquisaClientes{
+        margin-top: 20px;
+    }
+}
+
+
+.iconesInteractions{
+    margin-top: 5px;
+    display: flex;
+    padding-inline-end: 30px;
+}
+
+@media only screen and (max-width: 450px){
+    .iconesInteractions{
+        margin-top: 20px;
+    }
+}
+aside{
+    width: 100%;
+    height: 580px;
+    padding: 0px 40px;
+    margin: 30px 40px 0px 0px;
+}
+
+.cardCliente{
+    display: flex;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 450px){
+    .cardCliente{
+        display: block;
+    }
+}
+
+.spanCard{
+    padding: 50px 0px 260px 0px;
+    border-radius: 10px;
+    box-shadow: 6px 3px 16px -7px rgba(0,0,0,0.2);
+}
+
+.spanNovoCliente{
+    box-shadow: 6px 7px 27px 0px rgba(0,0,0,0.2);
+    padding: 30px 20px 10px 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+@media only screen and (max-width: 450px){
+    .spanNovoCliente{
+        margin-top: 100px;
+    }
+}
+
+
+.statusCliente{
+    background-color: yellowgreen;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+@media only screen and (max-width: 450px){
+    .statusCliente{
+        width: 83px;
+        height: 18px;
+    }
+}
+
+.textStatusNovo{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+.title{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.formGroup{
+    display: grid;
+    padding-inline-end: 60px;
+}
+
+@media only screen and (max-width: 800px){
+    .formGroup{
+        padding-inline-end: 10px;
+    }
+}
+
+
+
+
+.formGroup input{
+    font-family: "Montserrat-Light";
+    font-size: 15px;
+    color: #272728;
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px 10px 16px;
+    border: solid 1px #e1e1e1;
+    background-color: #fcfcfc;
+    border-radius: 3px;
+    transition: linear .2s;
+    display: block;
+    margin-top: 10px;
+}
+
+.formGroup output{
+    font-family: "Montserrat-Light";
+    font-size: 15px;
+    color: #272728;
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px 10px 16px;
+    border: solid 1px #e1e1e1;
+    background-color: #fcfcfc;
+    border-radius: 3px;
+    transition: linear .2s;
+    display: block;
+    margin-top: 10px;
+}
+
+.formGroup #text-mensage{
+    font-family: "Montserrat-Light";
+    font-size: 15px;
+    color: #272728;
+    width: 100%;
+    height: 40px;
+    padding: 10px 28px 60px 3px;
+    border: solid 1px #e1e1e1;
+    background-color: #fcfcfc;
+    border-radius: 3px;
+    transition: linear .2s;
+    display: block;
+    margin-top: 10px;
+    margin: 10px 854px 0px 0px;
+}
+
+.formGroup label{
+    font-family: 'Ubuntu', sans-serif;
+    color: #383434;
+}
+@media only screen and (max-width: 600px){
+    .formGroup label{
+        margin-top: 10px;
+    }
+}
+
+.editSpan{
+    background-image: url('/Styles/Icons/Editar-ICO.svg');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+
+.iconeQuestion{
+    background-image: url('/Styles/Icons/Question-ICO.svg');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    padding: 20px 20px;
+}
+
+.btnRedirect{
+    display: flex;
+    align-items: center;
+    place-content: center;
+    margin-top: 80px;
+}
+
+#containerSair{
+    background-color: rgba(0, 0, 0, .9);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none; /*sedisplay Flex, mostra pop-up*/
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo{
+    background: white;
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    text-align: -webkit-center;
+    display: block;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.formularioCliente{
+    display: flex;
+}
+.itensFormulario{
+    display: block;
+}
+.flexItemForm{
+    display: flex;
+    margin: 5px 0px 20px 0px;
+}
+@media only screen and (max-width: 600px){
+    .flexItemForm{
+        display: block;
+    }
+}
+.flexCardForm{
+    display: flex;
+}
+
+@media only screen and (max-width: 900px){
+    .flexCardForm{
+        display: block;
+    }
+}
+
+.textPopUP{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+.btnSairPopUP{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px;
+    width: 250px;
+    height: 60px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    margin-left: 20px;
+    border-radius: 10px;
+    border-width: medium;
+    border-style: solid;
+    cursor: pointer;
+}
+.btnSairPopUP:hover{
+    background-color: yellow;
+    border: 1px yellow;
+}
+
+.btnContinuarPopUP{
+    background-color: #ffd200;
+    border-radius: 5px;
+    border: 1px #ffd200;
+    width: 250px;
+    height: 60px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: black;
+    margin-left: 20px;
+    border-radius: 10px;
+    border-width: medium;
+    border-style: solid;
+    cursor: pointer;
+}
+.btnContinuarPopUP:hover{
+    background-color: yellow;
+    border: 1px yellow;
+    
+}
+
+
+
+
+
+/*estilo scroll*/
+
+
+.links{
+	position: fixed;
+    display: inline-block;
+    display: inline-grid;
+    width: 60px;
+}
+
+.links label{
+    padding: 10px 20px 30px 40px;
+    margin: 23px 0px 0px 0px;
+    background-position: center;
+    flex-grow: 1;
+    cursor: pointer;
+    transition: all .4s;
+    text-align: center;
+    font-family: 'Arial';
+    font-size: 100%;
+    color: #fff;
+}
+
+.scroll{
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.sections{
+
+	transition:  all .0s;
+}
+
+input{
+	display: none;
+}
+.bloco{
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+    display: flex;
+    padding: 64px 60px 32px 0px;
+}
+
+#clientes{
+    background-color: #f5f7f9;
+}
+
+#chamados{
+	background-color: #f5f7f9;
+}
+#usuarios{
+	background-color: #f5f7f9;
+}
+
+#rd_usuarios:checked ~ .sections{
+	margin-top: -100vh;
+}
+
+.bloco img{
+	width: 40%;
+}
+
+/*estilos page chamados*/
+
+#headerChamados{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0px 40px;
+    margin: 30px 0px 0px 0px;
+}
+@media only screen and (max-width: 600px){
+    #headerChamados{
+        display: block;
+    }
+}
+
+.interactionsChamados{
+    display: flex;
+}
+@media only screen and (max-width: 450px){
+    .interactionsChamados{
+        display: block;
+    }
+}
+
+.interactionsChamados i{
+    margin: 0px 10px;
+}
+
+.pesquisaChamados{
+    padding: 15px 35px;
+    font-family: "Montserrat-Light";
+    font-size: 15px;
+    color: #272728;
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px 10px 16px;
+    border: solid 1px #e1e1e1;
+    background-color: #fcfcfc;
+    border-radius: 3px;
+    transition: linear .2s;
+    display: block;
+}
+@media only screen and (max-width: 450px){
+    .pesquisaChamados{
+        margin-top: 20px;
+    }
+}
+
+.spanNovoChamados{
+    box-shadow: 6px 7px 27px 0px rgba(0,0,0,0.2);
+    padding: 30px 20px 10px 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+@media only screen and (max-width: 450px){
+    .spanNovoChamados{
+        margin-top: 100px;
+    }
+}
+
+.cardChamados{
+    display: flex;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 450px){
+    .cardChamados{
+        display: block;
+    }
+}
+
+.statusChamados{
+    
+}
+@media only screen and (max-width: 450px){
+    .statusChamados{
+        width: 83px;
+        height: 18px;
+    }
+}
+
+.formularioChamados{
+    display: flex;
+}
+
+.textStatusChamados{
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.status-Finalizado{
+    width: 90px;
+    margin-top: 5px;
+    height: 15px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.status-EmAndamento{
+    width: 60px;
+    margin-top: 5px;
+    height: 10px;
+    background-color:yellow;
+    border-radius: 5px;
+}
+
+.status-Pendente{
+    width: 30px;
+    margin-top: 5px;
+    height: 10px;
+    background-color: green;
+    border-radius: 5px;
+}
+
+#status-Finalizado{
+    
+}
+
+#status-EmAndamento{
+    display: none;
+}
+
+#status-Pendente{
+    display: none;
+}
+
+/*estilos page usuários*/
+
+.interactionsUsuarios{
+    display: flex;
+}
+@media only screen and (max-width: 450px){
+    .interactionsUsuarios{
+        display: block;
+    }
+}
+
+.interactionsUsuarios i{
+    margin: 0px 10px;
+}
+.adicionarNovoUsuarios{
+    background-image: url('/Styles/Icons/Mais-ICO.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.filtroStatusUsuarios-ICONE{
+    background-image: url('/Styles/Icons/Filtro-ICO.svg');
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.pesquisaUsuarios{
+    padding: 15px 35px;
+    font-family: "Montserrat-Light";
+    font-size: 15px;
+    color: #272728;
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px 10px 16px;
+    border: solid 1px #e1e1e1;
+    background-color: #fcfcfc;
+    border-radius: 3px;
+    transition: linear .2s;
+    display: block;
+}
+
+.spanNovoUsuarios{
+    box-shadow: 6px 7px 27px 0px rgba(0,0,0,0.2);
+    padding: 30px 20px 10px 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+@media only screen and (max-width: 450px){
+    .spanNovoUsuarios{
+        margin-top: 100px;
+    }
+}
+
+.cardUsuarios{
+    display: flex;
+    justify-content: space-between;
+}
+@media only screen and (max-width: 450px){
+    .cardUsuarios{
+        display: block;
+    }
+}
+
+.statusUsuarios{
+    
+}
+@media only screen and (max-width: 450px){
+    .statusUsuarios{
+        width: 83px;
+        height: 18px;
+    }
+}
+
+.textStatusUsuarios{
+    color: black;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.status-Inativo{
+    width: 90px;
+    margin-top: 5px;
+    height: 10px;
+    background-color: red;
+    border-radius: 5px;
+}
+
+.status-Ativo{
+    width: 60px;
+    margin-top: 5px;
+    height: 10px;
+    background-color:yellow;
+    border-radius: 5px;
+}
+
+.status-Novo{
+    width: 30px;
+    margin-top: 5px;
+    height: 10px;
+    background-color: green;
+    border-radius: 5px;
+}
+
+#status-Inativo{
+    
+}
+
+#status-Ativo{
+    display: none;
+}
+
+#status-Novo{
+    display: none;
+}

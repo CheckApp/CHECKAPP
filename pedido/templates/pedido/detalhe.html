@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %} Pedido - Detalhes</title>
+
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --blue:#041562;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        
+        ::-webkit-scrollbar{
+            height: .5rem;
+            width: 1rem;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background-color: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+      
+    </style>
+</head>
+
+
+{% load omfilters %}
+{% load static %}
+
+{% block conteudo %}
+
+    {% include 'parciais/_menulateral.html' %}
+
+
+    <div class="container" >
+
+
+        <div class="row nav-produtos text-06 mt-3">
+
+                <div class="col titulo-TipoProduto">
+
+                    <i class='bx bx-layer iconePedidos icon'></i>
+                    <span class="textos textoBranco tituloPage">Pedido | Detahe do pedido</span>
+                </div>
+
+                <div class="col btn-voltar">
+                    <a class="bx bxs-arrow-from-right" href="{% url 'pedido:lista' %}"></a>
+                </div>
+        </div>
+
+        <br><br><br><br><br><br>
+
+        {% include 'parciais/_pedido.html' %}
+
+    </div>
+
+    <br><br><br><br><br><br><br><br><br>
+    {% include 'parciais/_pagination.html' %}
+
+{% endblock %}

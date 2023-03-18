@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}CheckApp - Documentação</title>
+</head>
+<style>
+    :root{
+        --green:#27ae60;
+        --black:#192a56;
+        --blue:#041562;
+        --light-color:#666;
+        --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 8rem;
+    }
+     
+    ::-webkit-scrollbar{
+        height: .5rem;
+        width: 1rem;
+    }
+     
+    ::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+     
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    .img-capaPages{
+        padding: 0px 170px;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url(/media/imagens/banner-integracao.svg);
+        background-repeat: no-repeat;
+        background-size: 27%;
+        background-position-x: 824px;
+        background-position-y: 119px;
+        
+
+    }
+    .tituloPage{
+        align-self: center;
+        margin-top: 106px;
+        text-align: initial;
+    }
+    .efeito::after{
+        content:'|';
+        color: red;
+        margin-left: 5px;
+        opacity: 10;
+        animation: escrevendo .7s infinite;
+    }
+    .container-conteudoSeguranca{
+        background: white;
+        height: 100%;
+        padding: 80px 100px;
+    }
+    .tabelaDetalhamento{
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+    }
+    .tabelaDetalhamento table tr th{
+        font-size: 20px !important;
+       
+    }
+    .table tbody tr td{
+        color: black !important;
+        font-size: 20px;
+        font-family: dosis;
+    }
+    .table tbody tr th{
+        color: red !important;
+        font-size: 20px;
+        font-family: dosis;
+    }
+    @media screen and (max-width: 1200px) {
+        .img-capaPages {
+            background-position: center !important;
+            background-size: 50% !important;
+            background-position-x: 680px;
+            background-position-y: 119px;
+            height: 100% !important;
+            padding: 0px 10px !important;
+            text-align: center;
+            align-items: center;
+        }
+        .tituloPage {
+            margin-top: 524px;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        
+        
+    }
+    @media screen and (max-width: 1000px) {
+     
+        .container-conteudoSeguranca{
+            background: white ;
+            height: 100%;
+            padding: 50px 10px !important;
+        }
+    }
+    
+</style>
+
+
+<body>
+    <div class="containerProjetos">
+
+        {% include 'parciais/_nav.html' %}
+
+        <div class="img-capaPages" alt="...">
+
+            <article class="tituloPage">
+                <h2 class="titulo1 texto-amarelo">Integração</h2>
+                <h3 class="titulo2 textos efeito">Regras e detalhes da comunicação CRM x ERP </h3>
+            </article>
+  
+
+        </div>
+        <br><br><br><br>
+
+        <div class="container-conteudoSeguranca">
+
+            <div class="conteudoSeguranca">
+                <br><br><br><br>
+
+                <p class="titulos">Importação de Produtos</p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                   
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            A integração de importação de produtos tem como objetivo, carregar dentro do sistema CheckApp, a base de produtos através de integração com um arquivo no formato TXT, que é gerado através dos nossos sistemas parceiros. Esta integração visa estabelecer comunicação direta com outros sistemas, garantindo a <strong> atualização da base de produtos da loja</strong> em tempo real.                 
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto "> <strong> Regras para geração das informações</strong></p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto">
+                            Não há necessidade em padronizar o nome do arquivo gerado, pois
+                            será realizado um upload no sistema e será levado em
+                            consideração o usuário logado para identificar a empresa à qual os
+                            produtos serão vinculados.                        
+                        </p>
+                        <br>
+                        <p class="textos textoPreto">
+                            Os campos de todos os tipos de registro são separados pelo
+                            caractere “<strong>#</strong>”.                        
+                        </p>
+                        <br>
+                        <p class="textos textoPreto">
+                            Os registros deverão ser gravados no arquivo respeitando as
+                            seguintes regras:                        
+                        </p>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto">
+                            <strong>Tipo:</strong> texto não delimitado;
+                            <br>
+                            <strong>Tamanho:</strong> fixo, conforme tamanhos especificados mais abaixo, acrescidos de CR/LF (Carriage Return/Line Feed) ao final de cada registro;
+                            <br>
+                            <strong>Organização:</strong> sequencial;
+                            <br>
+                            <strong>Codificação:</strong> ASCII.
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto "> <strong> O formato dos campos deverá seguir as seguintes regras:</strong></p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto">
+                            <strong>Numérico:</strong> sem sinal, não compactado, alinhado à direita,
+                            suprimidos a vírgula e os pontos decimais, com as posições
+                            não significativas zeradas;
+                            <br>
+                            <strong>Alfanumérico:</strong>alinhado à esquerda, com as posições não
+                            significativas em branco;                            
+                            <br>
+                            <strong>Data: </strong> somente os algarismos da data, no formato
+                            AAAAMMDD;
+                            
+                            <br>
+                            <strong>Hora:</strong> somente os algarismos da hora, no formato HH:MM:SS;
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto "> <strong>O preenchimento dos campos deverá observar as seguintes regras:</strong></p>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto">
+                            <strong>Numérico:</strong> na ausência da informação, os campos deverão
+                            ser preenchidos com zeros;
+                            <br>
+                            <strong>Alfanumérico:</strong>na ausência da informação, os campos
+                            deverão ser preenchidos com brancos;                            
+                            <br>
+                            <strong>Data: </strong> na ausência da informação, os campos deverão ser
+                            preenchidos com brancos;
+                            
+                            <br>
+                            <strong>Hora:</strong> na ausência da informação, os campos deverão ser
+                            preenchidos com brancos.
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto "> <strong> Importação de Produtos  - Detalhamento</strong></p>
+                        <br>
+                        <br>
+                        <div class = "tabelaDetalhamento">
+                            <table class="table ">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Campo</th>
+                                    <th scope="col">Obrigatório</th>
+                                    <th scope="col">Tamanho</th>
+                                    <th>-</th>
+                                    <th scope="col">Formato Conteúdo</th>
+                                    <th scope="col">Observação</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row"></th>
+                                    <td></td>
+                                    <td>Máximo</td>
+                                    <td>Decimais</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Tipo Registro</th>
+                                    <td><strong>X</strong></td>
+                                    <td>01</td>
+                                    <td>-</td>
+                                    <td><strong>P</strong></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Código</th>
+                                    <td><strong>X</strong></td>
+                                    <td>20</td>
+                                    <td>-</td>
+                                    <td>Alfanumérico</td>
+                                    <td>Utilizar o código de barras dos produtos afim de vincular os produtos para recomendação. 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Descrição</th>
+                                    <td><strong>X</strong></td>
+                                    <td>50</td>
+                                    <td>-</td>
+                                    <td>Alfanumérico</td>
+                                    <td>Descrição do produto, geralmente o nome que compõe a embalagem</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Unidade Venda</th>
+                                    <td><strong>X</strong></td>
+                                    <td>20</td>
+                                    <td>-</td>
+                                    <td>Alfanumérico</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Preço de Venda</th>
+                                    <td><strong>X</strong></td>
+                                    <td>9</td>
+                                    <td>2</td>
+                                    <td>Numérico</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Estoque</th>
+                                    <td><strong></strong></td>
+                                    <td>6</td>
+                                    <td>0</td>
+                                    <td>Numérico</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">CR+LF</th>
+                                    <td><strong>X</strong></td>
+                                    <td>2</td>
+                                    <td>-</td>
+                                    <td>Exadecimal</td>
+                                    <td>-</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p class="titulos">Exportação da (OS) Ordem de Serviço</p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            A Exportação da ordem de serviço, conhecida popularmente como OS, tem por objetivo enviar, vendas realizadas dentro do sistema CheckApp, via integração, para ser dado baixa nos sistemas ERPs parceiros. Esta integração também ocorre através da utilização de arquivo no formato TXT, que é gerado em diretório/pasta pré determinada, no dispositivo que o software de integração estiver instalado, para ser processado pelo sistema parceiro e exibido no caixa. Através desta integração, garantimos que não haja retrabalho com a duplicação de lançamento das vendas.
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        
+                        <p class="textos textoPreto "> <strong>Padrão de nome do arquivo gerado</strong></p>
+                        <br>
+                        <p class="textos textoPreto">
+                            Ao concluir o checklist dentro do sistema CheckApp, um
+                            arquivo no formato de texto será exportado
+                            automaticamente seguindo o padrão de nome
+                            <strong>aaaammddhhmmssPPP1234OS999.TXT</strong>, sendo:                       
+                        </p>
+                        <br>
+                        <br>
+                        <div class = "tabelaDetalhamento">
+                            <table class="table ">
+                                <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Caracteres</th>
+                                    <th scope="col">Descrição</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">Aaaa</th>
+                                    <td>Ano atual com 4 dígitos</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Mm</th>
+                                    <td>Mês atual com 2 dígitos</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Dd</th>
+                                    <td>Dia atual com 2 dígitos</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Hh</th>
+                                    <td>Hora atual com 2 dígitos</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Mm</th>
+                                    <td>Minuto atual com 2 dígitos</td>
+                        
+                                </tr>
+                                <tr>
+                                    <th scope="row">Ss</th>
+                                    <td>Segundo atual com 2 dígitos</td>
+                            
+                                </tr>
+                                <tr>
+                                    <th scope="row">PPP1234</th>
+                                    <td>Placa do veículo associado ao checklist</td>
+                             
+                                </tr>
+                                <tr>
+                                    <th scope="row">OS999</th>
+                                    <td>Caracteres “OS” seguido pelo número do checklist gerado
+                                        automaticamente pelo sistema <strong>(neste exemplo 999)</strong></td>
+                                   
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto "> <strong>Regra das informações</strong></p>
+                        <br>
+                        <p class="textos textoPreto">
+                            As informações serão separadas pelo caractere delimitador <strong>"#"</strong>, seguindo as regras descritas abaixo:                       
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <div class = "tabelaDetalhamento">
+                            <table class="table ">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">Regra</th>
+                                        <th scope="col">Descrição</th>
+                            
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Codificação</th>
+                                        <td>ASCII</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tamanho</th>
+                                        <td>Limitado seguindo as regras detalhadas na
+                                            tabela abaixo, acrescidos de CR/LF (Carriage
+                                            Return/Line Feed) ao final de cada registro
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Organização</th>
+                                        <td>Sequencial, respeitando a ordem descrita na
+                                            tabela abaixo
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Valores numéricos</th>
+                                        <td>Sem sinal, não compactado, suprimindo a vírgula
+                                            e pontos decimais, com as posições não
+                                            significativas preenchidas com “0” (zero)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Valores alfanuméricos</th>
+                                        <td>Alinhados à esquerda, com posições não
+                                            significativas em branco
+                                        </td>
+                            
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Data</th>
+                                        <td>Somente caracteres no formato AAAAMMDD</td>
+                                
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Hora</th>
+                                        <td>Somente caracteres no formato HHMMSS</td>
+                                
+                                    </tr>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto">
+                            Poderão existir informações adicionais além das descritas
+                            abaixo por evolução do produto. Estas devem ser
+                            ignoradas.                        
+                        </p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="textos textoPreto "> <strong>Linha de detalhe do cliente</strong></p>
+                 
+                      
+                        <br>
+                        <br>
+                        <div class = "tabelaDetalhamento">
+                            <table class="table ">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">Campo</th>
+                                        <th scope="col">Obrigatório</th>
+                                        <th scope="col">Tamanho</th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Formato/conteúdo</th>
+                                        <th scope="col">Observações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row"></th>
+                                        <td></td>
+                                        <td>Máximo</td>
+                                        <td>Decimais</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tipo registro</th>
+                                        <td> <strong>X</strong></td>
+                                        <td>1</td>
+                                        <td>-</td>
+                                        <td><strong>C</strong></td>
+                                        <td>Obrigatório</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Nome cliente</th>
+                                        <td> <strong>X</strong></td>
+                                        <td>50</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td>Obrigatório</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Endereço completo cliente</th>
+                                        <td></td>
+                                        <td>50</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Telefone fixo do cliente</th>
+                                        <td></td>
+                                        <td>30</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Telefone celular do cliente</th>
+                                        <td></td>
+                                        <td>30</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Odômetro veículo</th>
+                                        <td></td>
+                                        <td>10</td>
+                                        <td>-</td>
+                                        <td>Numérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Distância percorrida
+                                            Semanalmente</th>
+                                        <td></td>
+                                        <td>6</td>
+                                        <td>-</td>
+                                        <td>Numérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Nome atendente</th>
+                                        <td> <strong>X</strong></td>
+                                        <td>30</td>
+                                        <td></td>
+                                        <td>Alfanumérico</td>
+                                        <td>Obrigatório</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Documento do cliente</th>
+                                        <td></td>
+                                        <td>30</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Documento do atendente </th>
+                                        <td><strong>X</strong></td>
+                                        <td>50</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td>Obrigatório</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Valor desconto</th>
+                                        <td></td>
+                                        <td>9</td>
+                                        <td>2</td>
+                                        <td>Numérico</td>
+                                        <td>Valor do desconto dado ao final da venda.
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Placa veículo</th>
+                                        <td></td>
+                                        <td>10</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Ano veículo</th>
+                                        <td></td>
+                                        <td>4</td>
+                                        <td>-</td>
+                                        <td>Numérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Nome modelo</th>
+                                        <td></td>
+                                        <td>30</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Hash motor</th>
+                                        <td></td>
+                                        <td>30</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td>Para uso do Sistema</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tipo cliente</th>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>Numérico</td>
+                                        <td>
+                                            1 - Pessoa física
+                                            <br>
+                                            2 - Pessoa jurídica
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sexo cliente</th>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>Numérico</td>
+                                        <td>
+                                            0- Não se aplica
+                                            <br>
+                                            1- Feminino
+                                            <br>
+                                            2- Masculino
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Telefone comercial cliente</th>
+                                        <td></td>
+                                        <td>30</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">E-mail cliente</th>
+                                        <td></td>
+                                        <td>48</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Dia aniversário cliente</th>
+                                        <td></td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>Numérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Mês aniversário cliente</th>
+                                        <td></td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>Numérico</td>
+                                        <td></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tipo documento cliente</th>
+                                        <td></td>
+                                        <td>2</td>
+                                        <td>0</td>
+                                        <td>Numérico</td>
+                                        <td>
+                                            1- CPF
+                                            <br>
+                                            2- CNPJ
+                                            <br>
+                                            3- Inscrição Estadual
+                                            <br>
+                                            4- Inscrição Municipal
+                                            <br>
+                                            5- RG
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Endereço cliente</th>
+                                        <td></td>
+                                        <td>148</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Número endereço cliente</th>
+                                        <td></td>
+                                        <td>6</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Complemento endereço cliente</th>
+                                        <td></td>
+                                        <td>48</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CEP endereço cliente</th>
+                                        <td></td>
+                                        <td>14</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Bairro endereço cliente</th>
+                                        <td></td>
+                                        <td>48</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Cidade endereço cliente</th>
+                                        <td></td>
+                                        <td>98</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Estado endereço cliente</th>
+                                        <td></td>
+                                        <td>48</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">País endereço cliente</th>
+                                        <td></td>
+                                        <td>48</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Código promoção</th>
+                                        <td></td>
+                                        <td>20</td>
+                                        <td>-</td>
+                                        <td>Alfanumérico</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">CR+LF</th>
+                                        <td> <strong>X</strong></td>
+                                        <td>2</td>
+                                        <td>-</td>
+                                        <td>Hexadecimal</td>
+                                        <td>Obrigatório</td>
+                                        
+                                    </tr>
+
+
+                                
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <br>
+                <p class="textos textoPreto "> <strong>Linha de detalhe da ordem de serviço</strong></p>  
+                <br>
+                <br>
+                <br>
+                <div class = "tabelaDetalhamento">
+                    <table class="table ">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">Campo</th>
+                                <th scope="col">Obrigatório</th>
+                                <th scope="col">Tamanho</th>
+                                <th scope="col"></th>
+                                <th scope="col">Formato/conteúdo</th>
+                                <th scope="col">Observações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"></th>
+                                <td></td>
+                                <td>Máximo</td>
+                                <td>Decimais</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Tipo registro</th>
+                                <td> <strong>X</strong></td>
+                                <td>1</td>
+                                <td>-</td>
+                                <td><strong>O</strong></td>
+                                <td>Obrigatório</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Posição Item na OS</th>
+                                <td> <strong>X</strong></td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>Numérico</td>
+                                <td>Obrigatório</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Código Produto</th>
+                                <td> <strong>X</strong></td>
+                                <td>20</td>
+                                <td>-</td>
+                                <td>Alfanumérico</td>
+                                <td>Obrigatório</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Quantidade Item</th>
+                                <td> <strong>X</strong></td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>Numérico</td>
+                                <td>Obrigatório</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Valor Unitário Item</th>
+                                <td> <strong>X</strong></td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>Numérico</td>
+                                <td>Obrigatório</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Valor Bruto Item</th>
+                                <td> <strong>X</strong></td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>Numérico</td>
+                                <td>Obrigatório</td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row">Valor Desconto Item</th>
+                                <td> <strong>X</strong></td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>Numérico</td>
+                                <td></td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row">Valor Desconto Rateado Item</th>
+                                <td> <strong>X</strong></td>
+                                <td>2</td>
+                                <td></td>
+                                <td>Numérico</td>
+                                <td>Inativo*</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Valor Total Item</th>
+                                <td> <strong>X</strong></td>
+                                <td>9</td>
+                                <td>2</td>
+                                <td>Numérico</td>
+                                <td>Obrigatório</td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row">Status Item </th>
+                                <td><strong>X</strong></td>
+                                <td>9</td>
+                                <td>-</td>
+                                <td>Alfanumérico</td>
+                                <td>Inativo*</td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row">KM Próxima Troca do
+                                    Produto
+                                </th>
+                                <td></td>
+                                <td>6</td>
+                                <td>-</td>
+                                <td>Numérico</td>
+                                <td></td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row">Meses Próxima Troca do Produto</th>
+                                <td></td>
+                                <td>3</td>
+                                <td>-</td>
+                                <td>Numérico</td>
+                                <td></td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row">CR+LF</th>
+                                <td> <strong>X</strong></td>
+                                <td>2</td>
+                                <td>-</td>
+                                <td>Exadecimal</td>
+                                <td></td>
+                                
+                            </tr>
+
+                        
+                        </tbody>
+                    </table>
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <p class="titulos">Requisitos de integração </p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            A API em nuvem tem a certificação SOC 2 e mantém uma governança rígida, garantindo que os dados sejam tratados da maneira adequada. Também fazemos testes de intrusão regulares e registramos nossos controles usando o questionário "Consensus Assessments Initiative" da Cloud Security Alliance.                            <br>                            <br>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        
+        </div>
+
+        {% include 'parciais/_footers.html' %}
+    </div>
+    <script>
+        function typeWriter(elemento){
+            const textoArray = elemento.innerHTML.split('');
+            elemento.innerHTML = '';
+            textoArray.forEach((letra, i) => {
+                setTimeout(() => elemento.innerHTML += letra, 100 * i);
+            });
+        }
+        const titulo = document.querySelector('.efeito');
+        typeWriter(titulo);
+
+        typeWriter(document.querySelector('.efeito1'))
+        typeWriter(document.querySelector('.efeito2'))
+        typeWriter(document.querySelector('.efeito3'))
+        typeWriter(document.querySelector('.efeito4'))
+
+    </script>
+</body>
+
+</html>

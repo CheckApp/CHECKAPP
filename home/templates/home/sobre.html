@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}CheckApp - Sobre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet"><!--FONTE DOS TEXTOS-->
+</head>
+<style>
+  
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 8rem;
+    }
+     
+
+    .img-capaPages{
+        background-image: url(/media/imagens/banner-sobre.jpg);
+        padding: 0px 170px;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        text-align: -webkit-center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: center;
+    }
+    .tituloPage{
+        align-self: center;
+        margin-top: 106px;
+        text-align: initial;
+    }
+
+    .container-conteudoSobre{
+        background: white;
+        width: 100%;
+        padding: 30px 100px;
+    }
+    .cards-MissaoVisaoValores .card-sobreNos{
+        display: flex;
+        justify-content: center;
+    }
+    .card-Item-sobre{
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 90% );
+        margin: 44px 22px;
+        text-align: -webkit-center;
+        border-radius: 5px;
+        padding: 19px 19px;
+        max-width: 350px;
+        min-width: 350px;
+        border-radius: 18px;
+        height: 350px;
+        border-radius: 50px;
+        cursor: pointer;
+        
+    
+    }
+    .card-Item-sobre:hover{
+        background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(237 28 36) 105%, rgb(245 130 32) 25% );
+    }
+    .card-Item-sobre p{
+        color: white;
+        text-align: center;
+        line-height: 29px;
+        font-size: 20px;
+        font-weight: 100;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .ilustracao-mapa{
+        height: 700px;
+        width: 100%;
+        background-image: url(/media/imagens/art-mapa4.svg);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        display: flex;
+        background-position: center;
+        
+    }
+    .parceirosCheckapp{
+        display: flex;
+        place-content: center;
+    }
+    .listaParceiro{
+        display: flex;
+        list-style: none;
+    }
+    .parceiroItem{
+        height: 100%;
+        width: 100%;
+        
+    }
+    .img-shell{
+        background-image: url(/media/imagens/logos/logo-shell.png);
+        background-repeat: no-repeat;
+        background-size: 70%;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        background-position: center;
+    }
+    .img-lubpar{
+        background-image: url(/media/imagens/logos/lubpar-logo.png);
+        background-repeat: no-repeat;
+        background-size: 70%;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        background-position: center;
+    }
+    .img-michelin{
+        background-image: url(/media/imagens/logos/logo-michelin.png);
+        background-repeat: no-repeat;
+        background-size: 70%;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        background-position: center;
+    }
+    .img-ipiranga{
+        background-image: url(/media/imagens/logos/ipiranga-logo.jpg);
+        background-repeat: no-repeat;
+        background-size: 70%;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        background-position: center;
+    }
+    .img-petrobras{
+        background-image: url(/media/imagens/logos/br-logo.jpg);
+        background-repeat: no-repeat;
+        background-size: 70%;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        background-position: center;
+    }
+    .img-agricopel{
+        background-image: url(/media/imagens/logos/logo-agricopel.png);
+        background-repeat: no-repeat;
+        background-size: 70%;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        background-position: center;
+    }
+    .img-raizen{
+        background-image: url(/media/imagens/logos/logo-raizen.png);
+        background-repeat: no-repeat;
+        background-size: 70%;
+        height: 200px;
+        width: 200px;
+        display: flex;
+        background-position: center;
+    }
+    .conteudo-quemsomos{
+        display: inline-flex;
+    }
+    .logo-checkapp-sobre{
+        background-image: url(/media/imagens/logos/logo-checkapp.svg);
+        background-repeat: no-repeat;
+        background-size: 50%;
+
+        width: 30%;
+        display: flex;
+        background-position: center;
+    }
+    .texto-apresentacao{
+        width: 70%;
+        display: flex;
+    }
+    .vantagensCheckapp{
+        display: flex;
+        justify-content: center;
+        
+
+    }
+    .lista-vantangensCheckapp{
+        display:block;
+        list-style: none;
+        
+
+    }
+   
+    .lista-vantangensCheckapp li{
+        display:flex;
+        align-items: center;
+        height: 80px;
+        padding: 0px 20px;
+        margin: 10px 0px;
+        border-radius: 50px;
+        background-color: black;
+        
+    }
+    .lista-vantangensCheckapp li:hover{
+        cursor: pointer;
+        background-image: radial-gradient( circle farthest-corner at 10% 20%, rgb(237 28 36) 105%, rgb(245 130 32) 25% );
+        color: white !important;
+        
+        
+    }
+    
+    .iconeCheck{
+        background-image: url(/media/imagens/icones/iconeCheck.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        background-position: center;
+        list-style: none;
+        margin: 10px;
+    }
+    .efeito::after{
+        content:'|';
+        color: red;
+        margin-left: 5px;
+        opacity: 10;
+        animation: escrevendo .7s infinite;
+    }
+    .texto-vantagem{
+        color: white;
+    }
+    #title-Card{
+        font-size: 30px;
+        font-weight: 900;
+        color: #ffd200;
+        margin-top: 10px;
+    }
+
+    @media screen and (max-width: 800px) {
+        .conteudo-quemsomos {
+            display: block !important;
+        }
+        .container-conteudoSobre {
+            background: white;
+            width: 100% !important;
+            padding: 0px 10px !important;
+        }
+        .texto-apresentacao {
+            width: 100% !important;
+           
+        }
+        .cards-MissaoVisaoValores .card-sobreNos {
+            display: block !important;
+            text-align: -webkit-center !important;
+        }
+        .ilustracao-mapa {
+            height: 400px !important;
+    
+        }
+    }
+    @media screen and (max-width: 1000px) {
+     
+        .lista-vantangensCheckapp li {
+            height: 120px !important;
+        }
+        
+    }
+    @media screen and (max-width: 1200px) {
+        .listaParceiro {
+            display: block !important;
+        }
+        .parceiroItem{
+            height: 100px;
+        }
+    }
+
+    
+</style>
+
+
+<body>
+    <div class="  containerSobre">
+
+        {% include 'parciais/_nav.html' %}
+
+        <div class="img-capaPages" alt="...">
+            <article class="tituloPage">
+                <h2 class="titulo1 texto-amarelo">Sobre nós</h2>
+                <h3 class="titulo2 textos efeito">Construindo o futuro através do presente!</h3>
+            </article>
+        </div>
+        
+        
+        <div class="container-conteudoSobre">
+            <div class="conteudoSobreNos">
+                <br><br><br><br>
+
+                <p class="titulos">Quem somos </p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <div class="conteudo-quemsomos">
+                    <div class="logo-checkapp-sobre"></div>
+                    <div class="texto-apresentacao">
+                        <p class="textos textoPreto">
+                            O sistema CheckApp é um software desenvolvido pela AUTOAI (Inteligência Artificial Automotiva Desenvolvimento de Software LTDA), empresa do Grupo IPDV (Inivovação no Ponto de Venda), que há 5 anos é destaque nacional com sua solução CRM 100% online e integrada, para o mercado de reparação automotiva. Aplicando as mais avançadas tecnologias na entrega orientações técnicas e comerciais para a aplicação de óleos, fluídos, filtros e afins para carros, motos e caminhões.
+                        </p>
+                    </div>
+                </div>
+
+                <br><br><br>
+                <br><br><br>
+
+                <p class="titulos">Missão, Visão e Valores</p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <p class="textos textoPreto">
+                    Nossas atividades concentram-se, principalmente, em atuar com as normas, tecnologias e regulamentações técnicas, aplicadas ao setor automotivo, na construção do maior acervo de dados técnicos automotivos do mundo, visando disponibilizar informações consistentes e seguras aos nossos usuários, através da aplicação de tecnologias de Inteligência Artificial e Ciência de Dados.
+                </p>
+                <br>
+                <p class="textos textoPreto">
+                    Todo nosso know how está presente em nossos valores, Código de Conduta e Ética, Princípios de Integridade Corporativa e Comercial e em nossa Política de Privacidade.
+                </p>
+                <br><br><br>
+                <br><br><br>
+
+
+
+
+
+                <div class="cards-MissaoVisaoValores">
+                    <div class="card-sobreNos">
+
+                        <div class="card-Item-sobre shadow-lg">
+                
+                            <div class="icone-destaque">
+                                <i class="icone-missao"></i>
+                            </div>
+                            <p id="title-Card">Missão</p>
+                     
+                            <br>
+                            <p class="textos textoPreto">
+                                Enriquecer a relação de consumo através de informação técnica.
+                            </p>
+                        </div>
+
+                        <div class="card-Item-sobre shadow-lg">
+                
+                            <div class="icone-destaque">
+                                <i class="icone-visao"></i>
+                            </div>
+                            <p id="title-Card">Visão</p>
+                     
+                            <br>
+                            <p class="textos textoPreto">
+                                Ser a referência mundial no fornecimento de informações técnicas do mercado automotivo.
+                            </p>
+                        </div>
+
+                        <div class="card-Item-sobre shadow-lg">
+                
+                            <div class="icone-destaque">
+                                <i class="icone-valores"></i>
+                            </div>
+                            <p id="title-Card">Valores</p>
+                
+                            <br>
+                            <p class="textos textoPreto">
+                                Ética, transparência, humanização, competência, segurança, sustentabilidade e respeito.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <br><br><br>
+
+                <p class="titulos">Mapa de atuação</p>
+                <p>___________________</p>
+                <br>
+                <br>
+
+
+                <p class="textos textoPreto">
+                    O sistema CheckApp é parceiro de oficinas mecânicas em todo território nacional brasileiro, estando presente em 10 estados e em mais de 350 ofininas, sendo nas seguintes regiões: 
+                </p>
+                <br>
+                <br>
+            
+                <div class="ilustracao-mapa"></div>
+                <br><br><br>
+                <br><br><br>
+
+                <p class="titulos">Porque escolher o CheckApp?</p>
+                <p>___________________</p>
+                <br>
+                <br>
+                <p class="textos textoPreto">
+                    Com o CheckApp garantimos a padronização dos atendimentos da sua oficina para realização de uma revisão completa, minimizando possíveis erros da equipe de pista e aumentando o ticket médio com a indicação e venda de diversos produtos e muito mais:
+                </p>
+                <br>
+                <br>
+                <br><br><br>
+
+                <div class="vantagensCheckapp">
+                    <ul class="lista-vantangensCheckapp">
+
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                É o mais intuitivo e fácil de usar, seja em computador, tablet ou celular;
+                            </p>
+
+                        </li>
+                        <br>
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Sistema diferente para gerente de rede, gerente de loja, operador e cliente;
+                            </p>
+
+                        </li>
+                        <br>
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Possui relatório de revisões vencidas, para prospecção de cientes potencias.
+                            </p>
+
+                        </li>
+                        <br>
+
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Aumenta o ticket médio de vendas com o cumprimento do checklist padrão;
+                            </p>
+
+                        </li>
+                        <br>
+
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Identifica o veículo pela placa, através de integração com o DETRAN;
+                            </p>
+
+                        </li>
+                        <br>
+
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Recomenda produtos com fotos, facilitando a usabilidade da plataforma;
+                            </p>
+
+                        </li>
+                        <br>
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Destaca lubrificantes premium e aprovações das montadoras;
+                            </p>
+
+                        </li>
+                        <br>
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Envio de relatórios da revisão e orçamentos para clientes via WhatsApp;
+                            </p>
+
+                        </li>
+                        <br>
+                        <li class="shadow">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Ferramenta de recuperação de serviços do checklist não realizados;
+                            </p>
+
+                        </li>
+                        <br>
+                        <li class="shadow-lg">
+                            <i class="iconeCheck"></i>
+                            <p class="textos texto-vantagem">
+                                Relatórios de faturamento e muito mais em tempo real, por loja ou rede.
+                            </p>
+
+                        </li>
+                        <br>
+
+                    </ul>
+                </div>
+
+
+
+
+                <br>
+                <br>
+
+                <p class="titulos">Nossos clientes</p>
+                <p>___________________</p>
+                <br>
+                <br>
+
+                <p class="textos textoPreto">
+                    Através das nossas parcerias, construimos tecnologia para o mercado da reparação automotiva e consolidamos nossa presença em todo território nacional.
+
+                </p>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="parceirosCheckapp">
+                    <ul class="listaParceiro">
+                        <li class="parceiroItem">
+                            <span class="img-shell"></span>
+                        </li>
+                        <li class="parceiroItem">
+                            <span class="img-ipiranga"></span>
+                        </li>
+                        <li class="parceiroItem">
+                            <span class="img-petrobras"></span>
+                        </li>
+                        <li class="parceiroItem">
+                            <span class="img-lubpar"></span>
+                        </li>
+                        
+                        <li class="parceiroItem">
+                            <span class="img-raizen"></span>
+                        </li>
+                        <li class="parceiroItem">
+                            <span class="img-agricopel"></span>
+                        </li>
+                    </ul>
+                </div>
+                <br><br><br>
+                <br><br><br>
+            </div>
+        </div>
+        {% include 'parciais/_footers.html' %}
+    </div>
+    <script>
+        function typeWriter(elemento){
+            const textoArray = elemento.innerHTML.split('');
+            elemento.innerHTML = '';
+            textoArray.forEach((letra, i) => {
+                setTimeout(() => elemento.innerHTML += letra, 100 * i);
+            });
+        }
+        const titulo = document.querySelector('.efeito');
+        typeWriter(titulo);
+
+        typeWriter(document.querySelector('.efeito1'))
+        typeWriter(document.querySelector('.efeito2'))
+        typeWriter(document.querySelector('.efeito3'))
+        typeWriter(document.querySelector('.efeito4'))
+
+    </script>
+
+</body>
+
+</html>

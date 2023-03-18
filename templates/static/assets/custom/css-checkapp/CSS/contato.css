@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #0b090a;
+    background-image: url(/Styles/Images/background-contato.svg);
+    background-repeat: no-repeat;
+    background-size: 900px;
+    background-position: right;
+    background-position-y: 200px;
+}
+
+
+@media only screen and (max-width: 900px){
+    body{
+        background-blend-mode: soft-light;
+    }
+}
+
+.containerApresentation{
+    padding: 100px 50px 50px 100px;
+    width: 100%;
+    padding-top: 235px;
+}
+
+.containerApresentation div h1{
+    margin: 0px;
+    color: #ffd200;
+}
+
+.contact-fones{
+    color: white;
+    display: block;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 500; 
+}
+
+.contact-fones ul{
+    padding: 0px;
+}
+
+.contact-emails ul{
+    padding: 0px;
+}
+
+.contact-emails{
+    display: block;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 50px;
+}
+
+.contact-emails p{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.contact-fones p{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.containerContatos{
+    display: flex;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 1200px){
+    .containerContatos{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .contact-emails{
+        margin-left: 0px;
+    }
+}
+
+.title-email{
+    font-size: 25px;
+    font-weight: 900;
+}
+.title-contacts{
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.containerRedesSociais{
+    display: flex;
+    margin-top: 20px;
+    margin-left: -10px;
+}
+
+.ico-Facebook{
+    background-image: url('/Styles/Icons/ico-facebook.svg');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.ico-Instagram{
+    background-image: url('/Styles/Icons/ico-instagram.svg');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.ico-YouTube{
+    background-image: url('/Styles/Icons/ico-youtube.svg');
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}

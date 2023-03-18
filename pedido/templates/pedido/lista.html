@@ -1,0 +1,145 @@
+{% load static%}
+{% load omfilters %}
+
+
+<html lang="pt-BR">
+
+<head>
+
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %} Lista - Pedidos</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.css'%}">
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --blue:#041562;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        
+        ::-webkit-scrollbar{
+            height: .5rem;
+            width: 1rem;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background-color: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        .titulo-TipoProduto{
+            display: block;
+            text-align-last: initial;
+        }
+        @media screen and (min-width: 800px) {
+    
+            .titulo-TipoProduto{
+                padding: 43px 0px 0px 0px;
+            }
+
+        }
+        
+      
+    </style>
+</head>
+
+
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Rampart+One&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Dancing+Script&family=Rampart+One&display=swap');
+
+</style>
+
+
+
+
+{% block conteudo %}
+
+
+    {% include 'parciais/_menulateral.html' %}
+
+
+     <div class="containerProdutoCarrinho">
+
+
+        <div class="container" >
+
+            <div class="row nav-produtos container text-06 mt-3">
+
+                <div class="titulo-TipoProduto">
+                    <i class='bx bx-layer iconePedidos icon'></i>
+                    <span class="textos textoBranco tituloPage">Pedidos</span>
+                </div>
+
+            </div>
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="titulo-TipoProduto">
+                            <p class="titulo1 texto-amarelo">Lista de pedidos</p>
+                            <br>
+                            <p class="textos textoBranco">A baixo estão todos os seus pedidos de licença do software CheckApp</p>
+                        </div>
+                   
+            
+
+                        <br><br><br><br>
+
+
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th scope="col">Pedido</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Qtd. Licenças</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Detalhes</th>
+                                </tr>
+
+
+                                {% for pedido in pedidos %}
+                                <tr>
+                                    <th scope="row">{{ pedido }}</td>
+                                    <td>{{ pedido.total|formata_preco }}</td>
+                                    <td>{{ pedido.qtd_total }}</td>
+                                    <td>{{ pedido.get_status_display }}</td>
+                                    <td>
+                                        <a href="{% url 'pedido:detalhe' pedido.id %}">
+                                            Ver <i class="fas fa-search-plus ml-2"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <br><br><br><br><br><br><br><br><br>
+    {% include 'parciais/_pagination.html' %}
+
+{% endblock %}

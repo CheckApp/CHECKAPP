@@ -1,0 +1,724 @@
+body{
+    margin: 0;
+    background-color: white;
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position-x: 750px;
+    background-position-y: 160px;
+    background-size: 500px;
+}
+@media only screen and (max-width: 1200px){
+    body{
+        background-position-x: 1000px;
+    }
+}
+@media only screen and (max-width: 1150px){
+    body{
+        background-position-x: 1950px;
+    }
+}
+@media only screen and (max-width: 1200px){
+    body{
+        background-image: none;
+    }
+}
+
+/*Slide 1*/
+
+#Container-nav{
+    background: right;
+    width: 100%;
+    display: flex;
+    background-repeat: no-repeat;
+    min-height: calc(100vh - 45px);
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 85px 0 0;
+    z-index: 1;
+    background-image: radial-gradient(circle at center right,rgba(249,223,0,0) 0,rgba(249,223,0,0) 30%,#ffd200 62%,#ffd200 100%),url(/Styles/Images/mobile-image.jpg);
+}
+
+.containerApresentation{
+    display: flex;
+    width: 100%;
+    height: 650px;
+    padding: 100px;
+}
+.containerApresentation-introdution{
+    display: block;
+    width: 50%;
+    margin-top: -40px;
+}
+
+
+
+.containerApresentation-introdution .title{
+    color: black;
+    line-height: 70px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.containerApresentation-introdution .sub-title{
+    color: black;
+    line-height: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+/*Slide 2*/
+
+.container-slide1{
+    display: block;
+    width: 100%;
+    background-color: white;
+}
+
+
+.container-slide1-introduction{
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: -50px;
+    margin-top: 63px;
+}
+
+.container-slide1-banner{
+    width: 100%;
+    height: 800px;
+    display: flex;
+}
+
+.container-slide1-banner{
+    width: 100%;
+}
+
+.container-slide1-imageBanner{
+    width: 60%;
+    height: 550px;
+    text-align: -webkit-center;
+    background-color: #f8f8f8;
+    background-color: rgba(0,0,0,.07);
+    border-radius: 0px 20px 20px 0px;
+
+}
+
+.container-Image{
+    justify-content: center;
+    width: 80%;
+    max-width: 80%;
+    
+}
+
+.container-Image img{
+    display: inline;
+}
+
+.container-slide1-textApresentation{
+    width: 40%;
+    
+}
+.card-Text{
+    margin-left: -50px;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,.07);
+    margin-inline-end: 120px;
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+    color: black;
+    line-height: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    max-width: 666px;
+}
+#img-telaResponsiva{
+    margin-top: 100px;
+}
+
+
+
+
+/*Slide 3*/
+
+.container-slide3{
+    display: block;
+    width: 100%;
+    background-color: white;
+}
+
+
+.container-slide3-introduction{
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 63px;
+}
+
+.container-slide3-banner{
+    width: 100%;
+    height: 800px;
+    display: flex;
+}
+
+.container-slide3-imageBanner{
+    width: 60%;
+    height: 550px;
+    text-align: -webkit-center;
+    background-color: #f8f8f8;
+    background-color: rgba(0,0,0,.07);
+    border-radius: 20px 0px 0px 20px;
+
+}
+
+.container-Image{
+    justify-content: center;
+    width: 80%;
+    max-width: 80%;
+    margin-top: 70px;
+    
+}
+
+.container-Image img{
+    display: inline;
+}
+
+.container-slide3-textApresentation{
+    width: 40%;
+    padding-inline-start: 100px;
+    
+}
+.card-Text-Slide3{
+    padding: 20px;
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,.07);
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+    color: black;
+    line-height: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    position: absolute;
+    max-width: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.section-intro{
+    background-color: white;
+    display: flex;
+    width: 100%;
+    height: 600px;
+    
+}
+
+.section-ferramentas{
+    display: flex;
+    width: 100%;
+    height: 380;
+}
+
+.text-introduction{
+    padding: 0px 100px 0px 86px;
+    width: 50%;
+}
+
+.text-introduction p{
+    color: black;
+    line-height: 40px;
+    font-family: Ubuntu, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+#teladashboard {
+    width: 116%;
+}
+
+.text-introduction h2{
+    color: black;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 15px;
+    font-family: Ubuntu, sans-serif;
+}
+
+.background-Intro{
+    background-color:#ffd200;
+    border-radius: 5px;
+    border-radius: 0px 472px 0px 0px;
+    position: relative; 
+    margin-top: -80px;
+    display: flex;
+    width: 50%
+}
+.desktop-image{
+    justify-content: center;
+    width: 80%;
+    max-width: 80%;
+    margin-top: 170px;
+    margin-inline-start: 100px;
+}
+
+/*banner 2*/
+
+.container-ferramentas{
+    background-color: black;
+    display: inline-flex;
+    height: 380px;
+}
+
+.ico-recomendador{
+    background-image: url('/Styles/Icons/icone-recomendador.svg');
+    background-repeat: no-repeat;
+    background-size: 100px;
+    width: 100%;
+}
+.card-Item p{
+    color: white;
+    text-align: center;
+    line-height: 35px;
+    font-family: Ubuntu, sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+}
+.card-Item{
+    background-color: rgba(249, 244, 244, 0.13);
+    margin: 44px 22px;
+    text-align: -webkit-center;
+    border-radius: 5px;
+    padding: 19px 19px;
+    max-width: 22%;
+
+}
+
+#title-Card{
+    font-size: 30px;
+    font-weight: 900;
+    color: #ffd200;
+}
+
+#title-Card-cardInfos{
+    font-size: 30px;
+    font-weight: 900;
+    color: black;
+}
+.iconeRecomendador{
+    background-image: url('/Styles/Icons/icone-recomendador.svg');
+    background-repeat: no-repeat;
+    
+}
+.iconeOrcamento{
+    background-image: url('/Styles/Icons/icone-orçamento.svg');
+    background-repeat: no-repeat;
+    
+}
+.iconeChecklist{
+    background-image: url('/Styles/Icons/icone-checklist.svg');
+    background-repeat: no-repeat;
+    
+}
+.iconeWhatsapp{
+    background-image: url('/Styles/Icons/icone-whatsapp.svg');
+    background-repeat: no-repeat;
+    
+}
+
+.icone{
+    width: 40px;
+    height: 40px;
+    margin-top: 0px;
+}
+
+
+/*banner 3*/
+
+
+.section-veicles{
+    display: flex;
+    width: 100%;
+    height: 800px;
+    background-color: white;
+    margin: 0px;
+    
+}
+
+.text-sectionVeicles{
+    display: block;
+    padding: 0px 100px 0px 0px;
+    background-color: #ffd200;
+    width: 50%;
+    border-radius: 0px 0px 472px 0px;
+}
+
+.text-sectionVeicles p{
+    color: black;
+    line-height: 40px;
+    font-family: Ubuntu, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.text-sectionVeicles h1{
+    font-size: 40px;
+    font-weight: 900;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 139px;
+}
+
+.text-veicles{
+    padding: 100px 0px 0px 100px;
+}
+.veiclesCard{
+    display: block;
+    width: 50%;
+    margin: 100px 0px 0px 160px;
+
+}
+
+.itens-one{
+    display: flex;
+    margin-block-start: 79px;
+    margin-inline-start: -47px;
+}
+
+.text-titleCard{
+    color: black;
+    line-height: 15px;
+    font-family: Ubuntu, sans-serif;
+    margin-top: 63px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    margin-block-start: 197px;
+}
+.itens-two{
+    display: flex;
+}
+
+.card{
+    background-color: black;
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.car{
+    background-image: url(/Styles/Icons/car.svg);
+    background-repeat: no-repeat;
+    width: 320px;
+    height: 300px;
+    margin-left: -121px;
+    margin-top: 3px;
+}
+
+.truck{
+    background-image: url(/Styles/Icons/truck.svg);
+    background-repeat: no-repeat;
+    width: 274px;
+    height: 300px;
+    margin-left: 30px;
+    margin-top: -13px;
+    
+}
+
+.motocycle{
+    background-image: url('/Styles/Icons/motocycle.svg');
+    background-repeat: no-repeat;
+    width: 270px;
+    height: 300px;
+    margin-left: -95px;
+    
+}
+
+.truck-leve{
+    background-image: url('/Styles/Icons/tuck-leve.svg');
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    margin-left: 30px;
+    
+}
+
+/*banner 4*/
+
+.cardInfos{
+    background-color: white;
+    display: inline-flex;
+    height: 600px;
+    width: 100%;
+    justify-content: center;
+    padding: 0px 100px 0px 100px;
+}
+
+.card-Item-Infos p{
+    color: black;
+    text-align: center;
+    line-height: 35px;
+    font-family: Ubuntu, sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+}
+
+.card-Item-Infos{
+    background-color: rgb(255, 255, 255);
+    margin: 30px 20px;
+    text-align: -webkit-center;
+    border-radius: 5px;
+    padding: 47px 35px;
+    max-width: 460px;
+    max-height: 325px;
+}
+
+.icone-Servicos{
+    background-image: url('/Styles/Icons/serviços.svg');
+    background-repeat: no-repeat;
+    
+}
+
+.icone-Descontos{
+    background-image: url('/Styles/Icons/discount.svg');
+    background-repeat: no-repeat;
+    
+}
+
+.icone-Atendimentos{
+    background-image: url('/Styles/Icons/atendimento.svg');
+    background-repeat: no-repeat;
+    width: 62px;
+    height: 35px;
+}
+.section-cardInfos{
+    width: 100%;
+}
+#cardAtendimento{
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 20px 40px 0px;
+    background-color: #f8f8f8;
+}
+
+.section-integration{
+    background-color: black;
+    height: 630px;
+    width: 100%;
+    padding: 100px;
+    display: flex;
+}
+
+.container-Descrition-Integration-text{
+    display: block;
+    width: 50%;
+}
+
+#text-titleCard-integration{
+    color: white;
+    font-family: Ubuntu, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    width: 50%;
+}
+
+.background-image-integration{
+    width: 50%;
+    text-align: -webkit-center;
+}
+
+#background-image-integration{
+    color: white;
+    width: 100%;
+}
+
+.container-Descrition-Integration{
+    display: flex;
+}
+
+.container-Descrition-Integration div p{
+    color:white;
+    line-height: 40px;
+    font-family: Ubuntu, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.textDescrition-Integration{
+    width: 90%;
+}
+
+.container-comentarios{
+    width: 100%;
+    height: 800px;
+    display: block;
+}
+
+.container-comentarios-conteudo{
+    display: flex;
+    position: absolute;
+    padding: 48px 89px 0px 323px;
+}
+
+.item-coment-descrition{
+    display: block;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 20px 40px 0px;
+    background-color: white;
+    margin: 29px 25px;
+    padding: 14px 11px;
+    border-radius: 10px;
+}
+
+.coment-descrition-text{
+    color: black;
+    line-height: 40px;
+    font-family: Ubuntu, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.coment-descrition-user{
+    color: black;
+    line-height: 0px;
+    font-family: Ubuntu, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 50px;
+}
+
+.identification-loja{
+    color: black;
+    line-height: 5px;
+    font-family: Ubuntu, sans-serif;
+    font-size: 20px;
+    font-weight: 100;
+    font-style: oblique;
+}
+.coment-descrition{
+    padding: 10px;
+    
+}
+
+.icone-comentarios img{
+    max-width: 50px;
+}
+
+.text-titleCard-comentarios{
+    color: black;
+    line-height: 15px;
+    font-family: Ubuntu, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 900;
+    margin-block-end: 38px;
+    margin-top: 150px;
+    margin-block-end: 150px;
+}
+
+.rodape-page{
+    background-color: black;
+    width: 100%;
+    height: 700px;
+}
+
+.rodape-page{
+    padding: 100px;
+    display: inline-flex;
+}
+
+.links-rodape{
+    display: inline-flex;
+    width: 50%;
+    padding: 100px;
+    
+}
+.links-rodape a{
+    color: white;
+    font-family: Ubuntu, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 40px;
+    cursor: pointer;
+}
+.links-rodape a:hover{
+    color: #ffd200;
+}
+
+.links-rodape p{
+    color: #ffd200;
+    font-family: Ubuntu, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 10px;
+}
+.contacts{
+    display: block;
+    background-color:  #ffd200;
+    width: 50%;
+}
+
+.contacts-item{
+    display: flex;
+    
+}
+.links-rodape{
+    display: inline-grid;
+}
+.contacts-itens{
+    padding: 100px;
+    border: 1px solid black;
+}
+
+.background-fundo{
+    width: 60%;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 0.07);
+    border-radius: 0px 20px 20px 0px;
+}
+
+.container-action-Register{
+    background-image: url(/Styles/Images/banner-site.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 580px;
+}
+
+.container-action-Register-action{
+    padding: 196px 137px 56px 844px;
+}
+
+.container-action-Register-action h2{
+    font-family: Ubuntu, sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 40px;
+    color: black;
+}

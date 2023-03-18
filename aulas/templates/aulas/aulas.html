@@ -1,0 +1,59 @@
+
+<!doctype html>
+<html lang="pt-BR">
+{% load static %}
+{% load omfilters %}
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %}Aulas</title>
+</head>
+<body>
+    
+    {%block pageAulas%}
+
+    <article class="conteudoEventos">
+
+        <div class="img-conteudoEventos"></div>
+
+        <div class="cardsEventos">
+            <div class="card-evento ">
+                <div class="row ">
+                    <div class="col-lg-12">
+                        <div class="card-columns">
+
+                            {% load omfilters %}
+                        
+                            {% for post in posts %}
+
+                                {% if post.eventos%}
+
+                                    <div class="cardEvento-Flex">
+                                        
+                                        {% if post.foto_capa %}
+                                            <div class="img-post-evento">
+                                                <img src="{{ post.foto_capa.url }}" class="img-fluid rounded float-start" alt="{{ post.titulo }}">
+                                            </div>
+                                        {%endif%}
+
+                                        <div class="">
+                                            <div class="card-body">
+                                                <h5 class="sub-titulos textoBranco">{{ post.titulo }}</h5>
+                                                <p class="sub-titulos data-card-evento">29/mai/2022</p>
+                                                <a class="btn btn-transparente-bordaBranca btn-saibaMais-eventos" href="{% url 'home:detalhe' post.slug %}">Saiba mais</a>  
+                                            </div> 
+                                        </div>
+                                    </div>
+                                {%endif%}
+                            {% endfor %}
+                        
+                        </div>
+                    </div> 
+                </div>           
+            </div>
+        </div>
+    </article>
+
+
+    {%endblock%}
+
+</body>

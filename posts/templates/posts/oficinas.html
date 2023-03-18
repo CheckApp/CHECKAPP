@@ -1,0 +1,658 @@
+{% load static%}
+{% load humanize %}
+{% load omfilters %}
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+
+    <title>{% block titulo %}{% endblock %}CheckApp - Oficinas</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.css'%}">
+    
+</head>
+<style>
+    
+
+    :root{
+        --green:#27ae60;
+        --black:#192a56;
+        --blue:#041562;
+        --light-color:#666;
+        --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    }
+    html{
+        font-size: 62.5%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        scroll-padding-top: 8rem;
+    }
+    ::-webkit-scrollbar{
+        height: .5rem;
+        width: 1rem;
+    }
+    ::-webkit-scrollbar-track{
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--blue);
+        border-radius: 5rem;
+    }
+    .img-capaPages{
+        padding: 0px 170px;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url('/media/imagens/mobile-image.jpg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position-y: center;
+    }
+    .iconeMapa{
+        width: 80px;
+        height: 85px;
+        display: flex;
+        text-align: -webkit-center;
+        background-image: url(/media/imagens/localCheckapp.svg);
+        background-repeat: no-repeat;
+        background-size: 60px;
+        background-position-y: center;
+        background-position-x: center;
+    }
+    .tituloPage{
+        align-self: center;
+        margin-top: 106px;
+        text-align: initial;
+    }
+    .img-card-oficinas{
+        border-radius: 50px;
+        background: red;
+        width: 100px;
+        height: 100px;
+    }
+    .card_oficinas{
+        border: none !important;
+        border-radius: 10px !important;
+        margin: 40px 0px;
+        cursor: pointer;
+        background-color: black !important;
+        padding: 34px !important; 
+        min-height: 620px !important;
+        width: 90% !important;
+        margin: 0px 10px;
+    }
+    .efeito::after{
+        content:'|';
+        color: white;
+        margin-left: 5px;
+        opacity: 10;
+        animation: escrevendo .7s infinite;
+    }
+    .container-cardsEventos{
+        background: white;
+        width: 100%;
+        padding: 30px 100px;
+    }
+    .sectionEventos{
+        background: transparent;
+    }
+    .cardsOficinasRegistradas{
+        display: inline-grid;
+        width: 100%;
+    }
+    .identificacaoOficina{
+        display: flex;
+    }
+    .descricaoOficina{
+        margin-left: 50px;
+        justify-content: space-between;
+        display: flex;
+        width: 100%;
+    }
+    .botaoMapa{
+        cursor: pointer;
+        font-size: 20px;
+        text-align: -webkit-center;
+    }
+    .botaoMapa p{
+        color: red;
+    }
+    .logoLoja{
+        width: 100px;
+        height: 100px;
+    }
+    .container-conteudoPostsOficinas{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 100px;
+        background-color: white;
+        border-radius: 50px;
+        align-items: center;
+        padding: 0px 25px;
+        margin-top: 50px;
+        margin: 0px 80px;
+        margin-top: -130px;
+    }
+
+    .dropdown-menu-oficinas{
+        display: flex;
+        gap: 2px;
+        font-family: docis;
+    }
+    
+    .dropdown-menu-oficinas li{
+        width: 350px;
+        height: 50px;
+        list-style: none;
+    }
+    
+    .dropdown-menu-oficinas a{
+        display: block;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+        color: white !important;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        transition: all .2s linear;
+        cursor: pointer;
+    }
+    
+    .dropdown-menu-ficinas li:hover > a{
+        background-color: red;
+        color: black;
+    }
+    
+    .dropdown-menu-oficinas li:hover > .dropdown-submenu {
+        display: block;
+    }
+    
+    .dropdown-submenu{
+        margin-top: 1px;
+        display: none;
+    }
+    
+    .dropdown-submenu a{
+        background-color: #be0811;
+        width: 150%;
+        width: 150%;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 20px;
+        font-size: 15px;
+        font-family: docis !important;
+        border-left: 8px solid transparent;
+    }
+    .dropdown-submenu li:hover > a{
+        border-left: 8px solid black;
+    }
+    .nav-menuDrop{
+        margin-top: 20px;
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    #navbarResponsive{
+        justify-content: center !important;
+    }
+    .section-oficinas{
+        display: block;
+        width: 100%;
+        height: 170px;
+    }
+    .formularioBusca{
+        margin-top: -5px;
+    }
+    .inputbuscaOficina{
+        display: block;
+        width: 400px;
+        height: 50px;
+        padding: 0px 20px;
+        font-size: 20px;
+        font-weight: 400;
+        font-family: docis;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #f8f9fa;
+        background-clip: padding-box;
+        /* border: 1px solid #f3d600; */
+        border-radius: 50px;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    
+    }
+    .container-oficinas{
+        background: white;
+        height: 100%;
+        width: 100%;
+        padding: 200px 100px;
+        margin: 0 !important;
+        
+    }
+    @media (max-width: 1000px) {
+
+        .container-oficinas{
+            display: inline-table;
+            padding: 352px 100px;
+            place-items: center;
+            text-align: -webkit-center;
+            display: table-caption;
+        }
+        .card_oficinas{
+            height: 100% !important;
+            margin: 30px 0px;
+        }
+        .section-oficinas{
+            width: 100%;
+            height: 300px;
+        }
+        .container-conteudoPostsOficinas{
+            display: grid;
+            padding: 0px 32px;
+            height: 200px;
+            width: 100%;
+        }
+        .inputbuscaOficina{
+            width: 300px;
+        }
+        .chamadaAcaoOficinas{
+            width: 100%;
+            height: 100%;
+            display: inline-flex;
+            margin-top: 360px;
+        }
+        
+    }
+    
+   
+    .navbar-pesquisaAvancada{
+        z-index: 1;
+    }
+    .navbar-resultadoPesquisa{
+        z-index: 0;
+    }
+    .menuEstado{
+        color: yellow !important;
+    }
+    #Container{
+        background-color: rgba(0, 0, 0, .9);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2000;
+        display: none; /*sedisplay Flex, mostra pop-up*/
+        justify-content: center;
+        align-items: center;
+    }
+    .conteudo-Estados{
+        width: 70%;
+        height: 85%;
+        border-radius: 10px;
+        display: flex;
+        
+    }
+    .conteudo-Estados ul{
+        background: #ffc107;
+        width: 100%;
+        overflow: auto;
+        
+    }
+    .conteudo-Estados ul li{
+        list-style: none;
+        width: 100%;
+    }
+
+
+    #btnFechar{
+        position: fixed;
+        margin-left: 850px;
+        margin-top: -400px;
+        background-image: url(/media/imagens/icones/Close-ICO.svg);
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        border: none;
+        padding: 40px 40px;
+        cursor: pointer;   
+    }
+    .btn-abrirMenuEstados{
+        color: white !important;
+        font-size: 20px;
+        cursor: pointer;
+
+    }
+    .btn-selecionarEstado{
+        display: flex;
+    }
+    .icone-localCheckApp{
+        background-image: url(/media/imagens/localCheckapp.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 50px;
+        height: 80px;
+        display: flex; 
+        margin-top: 20px;
+    }
+    .text-selectEstado{
+        margin-left: 10px;
+        width: max-content;
+        color: white;
+    }
+    .text-selectEstado:hover{
+        color: #f3d600;
+    }
+    .selectEstado{
+        display: flex !important;
+        place-items: center;
+        cursor: pointer;
+        font-size: 40px;
+    }
+    .chamadaAcaoOficinas{
+        width: 100%;
+    }
+    .containerOficinas{
+        width: 100%;
+        display: block;
+        height: 100%;
+    }
+    .chamaDeAcao{
+        display: flex;
+        width: 100%;
+    }
+
+
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+    }
+
+    .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+    }
+
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+    .demo_wrap {
+        position: relative;
+        overflow: hidden;
+        padding: 16px;
+        border: 1px dashed green;
+    }
+    .demo_wrap h1 {
+        padding: 100px;
+        position: relative;
+        z-index: 2;
+    }
+    .demo_wrap img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        opacity: 0.6;
+
+    }
+    .subtitulo-oficinas{
+        background-color: #be0811 !important;
+    }
+    .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 2.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #dc3545 !important;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
+        font-size: 20px !important;
+    }
+    .page-item.active .page-link {
+        z-index: 1;
+        color: #fff;
+        background-color: #ffd200 !important;
+        border-color: #ffd200 !important;
+    }
+   
+
+</style>
+
+
+<body>
+
+      
+    <main>
+    
+        {% include 'parciais/_nav.html' %}
+       
+        <div class="img-capaPages" alt="...">
+            <article class="tituloPage">
+                <h2 class="titulo1 texto-amarelo">Oficinas</h2>
+                <h3 class="titulo2 textos efeito subtitulo-oficinas">Encontre uma oficina próxima de você</h3>
+            </article>
+        </div>
+        <!--Pesquisa de oficinas-->
+        <section class= "section-oficinas">
+            <nav class=" navbar-pesquisaAvancada navbar navbar-expand-lg static-top">
+                <div class="container-conteudoPostsOficinas">
+                    <!--Campo de busca-->
+                    <div class=" nav-menuDrop">
+                        <ul class="dropdown-menu-oficinas">
+                            <li>
+                                <form class="formularioBusca" action="{% url 'posts:post_busca' %}">
+                                    <input name="termo" value="{{ request.GET.termo }}" class="inputbuscaOficina" type="search" placeholder="Pesquisar por Estado, Cidade ou Oficina"
+                                            aria-label="Search">
+                                </form>
+                            </li>
+                        </ul>    
+                    </div>
+                    <!--seleção por Estados da federação-->
+                    <div class="textos ">
+                        <a class="selectEstado" onclick="abrirMenuSelecaoEstado()">
+                            <i class='bx bx-filter-alt'></i>
+                        </a>
+                    </div>
+                    
+                </div> 
+            </nav>   
+        </section>
+        <!--oficinas-->
+        <div class="album py-5">
+            <div class="container">
+                <div class="row">
+                    {% for post in posts %}
+                    <div class="album py-5">
+                        <div class="container">
+                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                                <div class="col">
+                                    <div class="card shadow-sm" style="min-height: 600px;">
+                                        {% if post.imagem_post %}
+                                            <a href="{% url 'posts:post_detalhes' post.id %}">
+                                                <img class="card-img-top"
+                                                    src="{{ post.imagem_post.url }}"
+                                                    alt="{{ post.titulo_post }}">
+                                            </a>
+                                        {% endif %}
+                                        <div class="card-body">
+                                            <h5 class=" card-title">
+                                                <p class="titulos" href="{% url 'posts:post_detalhes' post.id %}">
+                                                    {{ post.titulo_post }}
+                                                </p>
+                                            </h5>
+                                            <p class="sub-titulos">
+                                                <small class="text-muted sub-titulos">
+                                                    
+                                                    {{ post.estado }}
+                                                    |
+                                                    {{ post.cidade }}
+                                                    |
+                                                    {{ post.bairro }}
+                                                    |
+                                                    {{ post.numero_comentarios }} 
+                                                </small>
+                                            </p>
+                                            <br>
+                                            <br>
+                                            <a href="{% url 'posts:post_detalhes' post.id %}" class="btn btn-Amarelo">Saiba mais</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+    <section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--Paginação-->
+        <div class="row mt-3">
+            <div class="col">
+                {%include 'parciais/_pagination.html' %}
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!--Chamada de ação-->
+        <div class="chamadaAcaoOficinas" >
+           
+            {% include 'parciais/_chamadaAcao.html' %}
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!--Footer-->
+        {% include 'parciais/_footers.html' %}
+    </section>
+
+
+    <!--POP-UP Seleção De estado em estilo display:none, quando requisitado, em display:flex -->
+    <div id="Container" class="">
+        <div class="conteudo-Estados">
+            <ul>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Acre' %}">Acre</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Alagoas' %}">Alagoas</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Amapá' %}">Amapá</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Amazonas' %}">Amazonas</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Bahia' %}">Bahia</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Distrito Federal' %}">Distrito Federal</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Espírito Santo' %}">Espírito Santo</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Goiás' %}">Goiás</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Maranhão' %}">Maranhão</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Mato Grosso' %}">Mato Grosso</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Mato Grosso do Sul' %}">Mato Grosso do Sul</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Minas Gerais' %}">Minas Gerais</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Pará' %}">Pará</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Paraíba' %}">Paraíba</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Paraná' %}">Paraná</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Pernambuco' %}">Pernambuco</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Rio de Janeiro' %}">Rio de Janeiro</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Rio Grande do Norte' %}">Rio Grande do Norte</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Rio Grande do Sul' %}">Rio Grande do Sul</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Rondônia' %}">Rondônia</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Roraima' %}">Roraima</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Rondônia' %}">Rondônia</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Santa Catarina' %}">Santa Catarina</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'São Paulo' %}">São Paulo</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Sergipe' %}">Sergipe</a></li>
+                <li><a class="dropdown-item textos" href="{% url 'posts:post_estados' 'Tocantins' %}">Tocantins</a></li>
+            </ul>
+        </div>
+        <div id='btnFechar' onclick="fecharVideo()"></div>
+    </div>
+
+    <script>
+        function typeWriter(elemento){
+            const textoArray = elemento.innerHTML.split('');
+            elemento.innerHTML = '';
+            textoArray.forEach((letra, i) => {
+                setTimeout(() => elemento.innerHTML += letra, 100 * i);
+            });
+        }
+        const titulo = document.querySelector('.efeito');
+        typeWriter(titulo);
+        typeWriter(document.querySelector('.efeito1'))
+        typeWriter(document.querySelector('.efeito2'))
+        typeWriter(document.querySelector('.efeito3'))
+        typeWriter(document.querySelector('.efeito4'))
+
+
+        // POP-UP
+
+        function abrirMenuSelecaoEstado(){
+            document.getElementById('Container').style.display = 'flex'; // adiciona display flex no elemento ID Container (que por padão é none) para mostrar.
+        }
+
+        function fecharVideo(){
+            document.getElementById('Container').style.display = 'none'; // fecha display 
+        }
+        
+
+    </script>
+</body>
+</html>

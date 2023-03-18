@@ -1,0 +1,96 @@
+{% load omfilters %}
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <style>
+        .iconeCarrinhoNav{
+            font-size: 30px;
+            
+        }
+        .nav-link{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+    <nav class="navbar row color-nav navbar-expand-lg">
+
+        <div class="logomarca ">
+            <a class="navbar-brand text-logo logo-link " href="{% url 'home:home' %}"> 
+                <h1 class="text-logo logo-checkapp"></h1>
+            </a>
+        </div>
+     
+        <div class="links-interacao ">
+            <div>
+                <ul class="navbar-nav ml-auto">
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Conta
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'home:home' %}">Inicio</a>
+                            <a class="dropdown-item" href="{% url 'pedido:lista' %}">Meus pedidos</a>
+                            <a class="dropdown-item" href="{% url 'perfil:criar' %}">Atualizar meus dados</a>
+                            <a class="dropdown-item" href="{% url 'perfil:logout' %}">Sair</a>
+                        </div>
+                    </li>
+                    {% else %}
+
+                        <!--
+                            <li class="nav-item">
+                            <a class="nav-link textos texto-amarelo btn-link" href="{% url 'home:sobre' %}">Sobre</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link textos texto-amarelo btn-link" href="{% url 'home:contato' %}">Contato</a>
+                            </li>
+
+                        -->
+
+                        
+                        <li class="nav-item">
+                            <a class="btn btn-Amarelo" style="width: 100px;" href="{% url 'perfil:acesso' %}">LOGIN</a>
+                        </li>
+
+
+                    {% endif %}
+
+
+
+                    {% if request.session.carrinho %}
+
+                        <li class="nav-item">
+                            <a class="nav-link nav-cart-link active" href="{% url 'produto:carrinho' %}">
+                                <span class="nav-cart-text textos mr-1">
+                                    Carrinho
+                                </span>
+                                <span class="nav-cart-count textos mr-1">
+                                    <strong>{{ request.session.carrinho|cart_total_qtd }}x</strong>
+                                </span>
+                                <span class="nav-cart-icon mr-2">
+                                    <i class="fas fa-shopping-cart iconeCarrinhoNav"></i>
+                                </span>
+                            </a>
+                        </li>
+
+                    {% endif %}
+
+
+
+                </ul>
+
+                <!-- formulário de busca por produtos-->
+                <!--
+                <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'produto:busca' %}">
+                    <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search"
+                        placeholder="Busca" aria-label="Busca">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Busca</button>
+                </form>
+                -->
+
+            </div>
+        </div>
+    </nav>

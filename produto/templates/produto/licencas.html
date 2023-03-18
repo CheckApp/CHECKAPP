@@ -1,0 +1,147 @@
+{% load static%}
+
+
+<head>
+    {% include 'parciais/_head.html' %}
+
+    <title>{% block titulo %}{% endblock %}CheckApp | Licenças</title>
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --blue:#041562;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        
+        ::-webkit-scrollbar{
+            height: .5rem;
+            width: 1rem;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background-color: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+      
+    </style>
+</head>
+
+
+    {% block conteudoPizzaEspecial %}
+
+
+    <!-- MENU ESPECIAL  -->
+
+    {% include 'parciais/_menulateral.html' %}
+
+
+    <div class="container containerDisplayProdutos" >
+
+
+        <div class="row nav-produtos text-06 mt-3">
+
+                <div class="col titulo-TipoProduto">
+
+                    <i class='bx bx-store-alt iconePedidos icon'></i>
+                    <span class="textos textoBranco tituloPage">Loja | Licenças</span>
+                </div>
+
+                <div class="col btn-voltar">
+            
+
+                    <a class='bx bxs-arrow-from-right' href="{% url 'produto:loja' %}"></a>
+                </div>
+        </div>
+
+        <br><br><br><br><br>
+
+        {% load omfilters %}
+        <div class=" container ">
+
+            <div class=" containerDisplayProdutos-nav row">
+
+                {% for produto in produtos %}
+
+                    {% if produto.mostrar%}
+
+                         <div class="col-sm-3 display-Container ">
+
+
+
+                            <div class="card">
+
+                                {% if produto.imagem %}
+                                    <a href="{% url 'produto:detalhe' produto.slug %}">
+                                        <img class="card__img" src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+                                    </a>
+                                {% endif %}
+                                <br>
+                                <br>
+                                <!-- <div class="card__content">  -->
+                                     <div class="card__data">
+                                         <h1 class=" textos tituloProduto">{{ produto.nome }}</h1>
+                                         
+                                         {% if produto.preco_marketing_promocional %}
+
+                                            <span class=" textos2 precoProduto">
+                                                {{ produto.preco_marketing_promocional|formata_preco }} /mês
+                                            </span>
+
+                                            <!--
+
+                                            <span class=" card__preci">
+                                                {{ produto.preco_marketing|formata_preco }}
+                                            </span>
+                                            -->
+                                            {% else %}
+                                            <!--
+                                            <span class=" card__preci">
+                                                {{ produto.preco_marketing|formata_preco }}
+                                            </span>
+                                            -->
+                                         {% endif %}
+                                         <br>
+
+                                         <p class="textos2 breveDescricaoProduto">{{ produto.descricao_curta }}</p>
+                                         <br>
+                                         <a href="{% url 'produto:detalhe' produto.slug %}" class=" btn btn-Amarelo">Saiba mais</a>
+                                     </div>
+                                <!-- </div> -->
+                            </div>
+
+                        </div>
+                    {%endif%}
+
+                {%endfor%}
+
+            </div>
+
+            <br><br>
+
+            <div class="row mt-3">
+                <div class="col">
+                    {% include 'parciais/_pagination.html' %}
+                </div>
+            </div>
+
+            <br><br>
+        </div>
+    </div>
+
+{% endblock %}
+

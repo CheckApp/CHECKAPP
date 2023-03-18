@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    {% include 'parciais/_head.html' %}
+    <title>{% block titulo %}{% endblock %} Pagamento</title>
+    <style>
+        :root{
+            --green:#27ae60;
+            --black:#192a56;
+            --blue:#041562;
+            --light-color:#666;
+            --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+        }
+        html{
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-padding-top: 8rem;
+        }
+        
+        ::-webkit-scrollbar{
+            height: .5rem;
+            width: 1rem;
+        }
+        
+        ::-webkit-scrollbar-track{
+            background-color: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        ::-webkit-scrollbar-thumb{
+            background-color: #f3d600;
+            border-radius: 5rem;
+        }
+        @media screen and (max-width: 1000px){
+            .navDetalhePedido{
+                height: 300px !important;
+            }
+        }
+        
+      
+    </style>
+</head>
+
+
+
+{% load omfilters %}
+{% load static %}
+
+{% block conteudo %}
+
+    {% include 'parciais/_menulateral.html' %}
+
+    <div class="container" >
+
+        <div class="row nav-produtos text-06 mt-3">
+
+            <div class="col titulo-TipoProduto">
+
+                <i class='bx bx-dollar iconePedidos icon'></i>
+                <span class="textos textoBranco tituloPage">Pagamento | Pedido n° {{ pedido.id }}</span>
+            </div>
+
+            <div class="col btn-voltar">
+
+                    <a class="btn btn-Amarelo" href="{% url 'pedido:lista' %}"> Ver todos pedidos </a>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br><br><br>
+
+
+    <div class="container">
+
+         <div class="container">
+            {% include 'parciais/_pedido.html' %}
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--
+        <div class="row mt-4">
+            <div class="col">
+                <a href="#" class="btn btn-amarelo">Pagar</a>
+            </div>
+        </div>
+        -->
+    </div>
+
+
+
+
+{% endblock %}
